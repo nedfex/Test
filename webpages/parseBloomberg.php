@@ -45,6 +45,7 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 		//echo count($result)."</br>";
 		
 		$baseURL = get_base_page_address($URL);
+		$error_counter = 0;
 		
 		for($j=$company_start;$j < count( $result );$j++)
 		{
@@ -63,8 +64,7 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			{
 				echo "CONNECTION ERROR";
 				$j--;
-				continue;
-				
+				continue;			
 			}
 					
 			$result2 = parse_array($webpage2['FILE'],"<table summary=\"Recently viewed\"","</table");
@@ -89,11 +89,35 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			$industry = trim($industry);
 			$subindustry = trim($subindustry);
 			$companyName = trim($companyName);
-
 			
 		  $sql = "INSERT INTO `companyb` (`SECTOR`,`INDUSTRY`,`SUB_INDUSTRY`,`CompanyName`,`SYMBOL`,`COUNTRY_SYMBOL`,`COUNTRY`,`WEBSITE`) VALUES( '$sector' ,'$industry','$subindustry','$companyName','$SYMBOL[0]','$SYMBOL[1]','$country','$company_webpage');";
 		  mysql_query($sql);
-		  echo $sql."\n";
+		  echo $sql."=".mysql_affected_rows($link)."\n";
+		  
+		  if( mysql_affected_rows($link)==-1 )
+		  {
+		  	if(mysql_num_rows( mysql_query( "SELECT * FROM  `companyb` WHERE  `SYMBOL` =  '$SYMBOL[0]';"))==1)
+		  	{
+		  		echo "$SYMBOL[0] exists\n";
+		  		$error_counter = 0;
+		  		continue;
+		  	}
+		  	
+		  	$j--;
+		  	$error_counter++;
+		  	
+		  	if($error_counter>10)
+		  	{
+		  		echo "MYSQL CONNECTION ERROR : TERMINATE\n";
+		  		return;
+		  	}
+		  	continue;
+		  }
+		  else
+		  {
+		  	echo "SQL INSERT SUCCESS\n";
+		  	$error_counter = 0;
+		  }
 		  
 		  $fp = fopen('currency.txt', 'w');
 		  fprintf($fp,"%d %d %d",$h,$i,$j);
