@@ -57,6 +57,9 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			$subindustry = addslashes(trim(strip_tags($element[2])));
 			/*echo $companyName.$companyurl.$country.$industry."</br>";*/
 			//echo $baseURL.$companyurl."</br>";
+			//echo $companyurl."\n";
+			$capid = return_between( $companyurl."END" ,".asp?capId=","END" ,"EXCL");
+			//echo $capid;
 			
 			$webpage2 = http_get($baseURL.$companyurl , "");
 			
@@ -73,6 +76,7 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			$temp = parse_array($webpage2['FILE'] ,"<a class=\"link_xs\" href=\"../../sectorandindustry/industries"," INDUSTRY" );
 			$industry = addslashes(strip_tags($temp[0]."</a>"));
 			$temp = return_between($webpage2['FILE'] ,"<a class=\"link_sb\" href=\"","\" target" ,"EXCL");
+			
 			if(strlen($temp)>100)
 				$temp = "";
 			$company_webpage = $temp;
@@ -90,15 +94,21 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			$subindustry = trim($subindustry);
 			$companyName = trim($companyName);
 			
-		  $sql = "INSERT INTO `companyb` (`SECTOR`,`INDUSTRY`,`SUB_INDUSTRY`,`CompanyName`,`SYMBOL`,`COUNTRY_SYMBOL`,`COUNTRY`,`WEBSITE`) VALUES( '$sector' ,'$industry','$subindustry','$companyName','$SYMBOL[0]','$SYMBOL[1]','$country','$company_webpage');";
+		  $sql = "INSERT INTO `companyb` (`SECTOR`,`INDUSTRY`,`SUB_INDUSTRY`,`CompanyName`,`SYMBOL`,`COUNTRY_SYMBOL`,`COUNTRY`,`WEBSITE`,`TICKER`,`CAPID`) VALUES( '$sector' ,'$industry','$subindustry','$companyName','$SYMBOL[0]','$SYMBOL[1]','$country','$company_webpage','$SYMBOL[0]:$SYMBOL[1]',$capid);";
 		  mysql_query($sql);
 		  echo $sql."=".mysql_affected_rows($link)."\n";
 		  
+		  if($SYMBOL[0]=="UNDEFINED")
+		  {
+		  	echo "UNDEFINED::PASSED\n";
+		  	continue;
+		  }
+		  
 		  if( mysql_affected_rows($link)==-1 )
 		  {
-		  	if(mysql_num_rows( mysql_query( "SELECT * FROM  `companyb` WHERE  `SYMBOL` =  '$SYMBOL[0]';"))==1)
+		  	if( mysql_num_rows( mysql_query( "SELECT * FROM  `companyb` WHERE  `CAPID` = '$capid';")) ==1 )
 		  	{
-		  		echo "$SYMBOL[0] exists\n";
+		  		echo "$capid exists\n";
 		  		$error_counter = 0;
 		  		continue;
 		  	}
@@ -129,6 +139,5 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 	$page_start = 0;
 	
 }	
-	
-	
-	?>
+		
+?>
