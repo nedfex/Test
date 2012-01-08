@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" class="client-nojs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Aeropostale, Inc.  - Search results - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.18wmf1" />
+<meta name="robots" content="noindex,nofollow" />
+<link rel="apple-touch-icon" href="//en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.special%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" type="text/css" media="all" />
+<style type="text/css" media="all">a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */</style>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mw.config.set({"wgCanonicalNamespace": "Special", "wgCanonicalSpecialPageName": "Search", "wgNamespaceNumber": -1, "wgPageName": "Special:Search", "wgTitle": "Search", "wgCurRevisionId": 0, "wgArticleId": 0, "wgIsArticle": false, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgVectorEnabledModules": {"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "sectioneditlinks": false, "simplesearch": true, "experiments": true}, "wgWikiEditorEnabledModules": {"toolbar": true, "dialogs": true, "hidesig": true, "templateEditor": false, "templates": false, "preview": false, "previewDialog": false, "publish": false, "toc": false}, "wgTrackingToken": "3d1fbe2a31ef393d1cb175189e36ed9b", "wikilove-recipient": "", "wikilove-edittoken": "+\\", "wikilove-anon": 0, "mbEditToken": "+\\", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+}
+</script><script type="text/javascript">if ( window.mediaWiki ) {
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.18/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns--1 ns-special mw-special-Search page-Special_Search action-view skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Search results</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div class="mw-specialpage-summary">
+<p>For search options, see <a href="/wiki/Help:Searching" title="Help:Searching">Help:Searching</a>.
+</p>
+</div>
+<form id="powersearch" method="get" action="/w/index.php"><table id="mw-search-top-table" border="0" cellpadding="0" cellspacing="0"><tr><td>
+<input type="hidden" value="Special:Search" name="title" />
+<input id="powerSearchText" size="50" value="Aeropostale, Inc. " name="search" />
+<input type="hidden" value="Search" name="fulltext" />
+<input type="submit" value="Search" />
+</td></tr></table><div class="mw-search-formheader"><div class="search-types"><ul><li class="normal"><a href="/w/index.php?title=Special:Search&amp;search=Aeropostale%2C+Inc.+&amp;fulltext=Search&amp;profile=default&amp;redirs=1" title="Search in (Article)">Content pages</a></li><li class="normal"><a href="/w/index.php?title=Special:Search&amp;search=Aeropostale%2C+Inc.+&amp;fulltext=Search&amp;profile=images&amp;redirs=1" title="Search for files">Multimedia</a></li><li class="normal"><a href="/w/index.php?title=Special:Search&amp;search=Aeropostale%2C+Inc.+&amp;fulltext=Search&amp;profile=help&amp;redirs=1" title="Search in Wikipedia, Help">Help and Project pages</a></li><li class="normal"><a href="/w/index.php?title=Special:Search&amp;search=Aeropostale%2C+Inc.+&amp;fulltext=Search&amp;profile=all&amp;redirs=1" title="Search all of content (including talk pages)">Everything</a></li><li class="current"><a href="/w/index.php?title=Special:Search&amp;search=Aeropostale%2C+Inc.+&amp;fulltext=Search&amp;profile=advanced&amp;redirs=1" title="Search in custom namespaces">Advanced</a></li></ul></div><div class="results-info"><ul><li>Results <b>1–20</b> of <b>42</b> for <b>Aeropostale, Inc. </b></li></ul></div><div style="clear:both"></div></div><fieldset id="mw-searchoptions" style="margin:0em;"><legend>Advanced search</legend><h4>Search in namespaces:</h4><div id="mw-search-togglebox"><label for="mw-search-togglelabel">Check:</label><input type="button" id="mw-search-toggleall" value="All" /><input type="button" id="mw-search-togglenone" value="None" /></div><div class="divider"></div><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space: nowrap"><input name="ns0" type="checkbox" value="1" checked="checked" id="mw-search-ns0" />&#160;<label for="mw-search-ns0">(Article)</label></td><td style="white-space: nowrap"><input name="ns1" type="checkbox" value="1" id="mw-search-ns1" />&#160;<label for="mw-search-ns1">Talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns2" type="checkbox" value="1" id="mw-search-ns2" />&#160;<label for="mw-search-ns2">User</label></td><td style="white-space: nowrap"><input name="ns3" type="checkbox" value="1" id="mw-search-ns3" />&#160;<label for="mw-search-ns3">User talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns4" type="checkbox" value="1" id="mw-search-ns4" />&#160;<label for="mw-search-ns4">Wikipedia</label></td><td style="white-space: nowrap"><input name="ns5" type="checkbox" value="1" id="mw-search-ns5" />&#160;<label for="mw-search-ns5">Wikipedia talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns6" type="checkbox" value="1" id="mw-search-ns6" />&#160;<label for="mw-search-ns6">File</label></td><td style="white-space: nowrap"><input name="ns7" type="checkbox" value="1" id="mw-search-ns7" />&#160;<label for="mw-search-ns7">File talk</label></td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space: nowrap"><input name="ns8" type="checkbox" value="1" id="mw-search-ns8" />&#160;<label for="mw-search-ns8">MediaWiki</label></td><td style="white-space: nowrap"><input name="ns9" type="checkbox" value="1" id="mw-search-ns9" />&#160;<label for="mw-search-ns9">MediaWiki talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns10" type="checkbox" value="1" id="mw-search-ns10" />&#160;<label for="mw-search-ns10">Template</label></td><td style="white-space: nowrap"><input name="ns11" type="checkbox" value="1" id="mw-search-ns11" />&#160;<label for="mw-search-ns11">Template talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns12" type="checkbox" value="1" id="mw-search-ns12" />&#160;<label for="mw-search-ns12">Help</label></td><td style="white-space: nowrap"><input name="ns13" type="checkbox" value="1" id="mw-search-ns13" />&#160;<label for="mw-search-ns13">Help talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns14" type="checkbox" value="1" id="mw-search-ns14" />&#160;<label for="mw-search-ns14">Category</label></td><td style="white-space: nowrap"><input name="ns15" type="checkbox" value="1" id="mw-search-ns15" />&#160;<label for="mw-search-ns15">Category talk</label></td></tr></table><table cellpadding="0" cellspacing="0" border="0"><tr><td style="white-space: nowrap"><input name="ns100" type="checkbox" value="1" id="mw-search-ns100" />&#160;<label for="mw-search-ns100">Portal</label></td><td style="white-space: nowrap"><input name="ns101" type="checkbox" value="1" id="mw-search-ns101" />&#160;<label for="mw-search-ns101">Portal talk</label></td></tr><tr><td style="white-space: nowrap"><input name="ns108" type="checkbox" value="1" id="mw-search-ns108" />&#160;<label for="mw-search-ns108">Book</label></td><td style="white-space: nowrap"><input name="ns109" type="checkbox" value="1" id="mw-search-ns109" />&#160;<label for="mw-search-ns109">Book talk</label></td></tr></table><div class="divider"></div><input name="redirs" type="checkbox" value="1" checked="checked" id="redirs" />&#160;<label for="redirs">List redirects</label><input type="hidden" value="advanced" name="profile" /></fieldset></form><div class='searchresults'><p class="mw-search-createlink">
+<i>The page "<a href="/w/index.php?title=Aeropostale,_Inc.&amp;action=edit&amp;redlink=1" class="new" title="Aeropostale, Inc. (page does not exist)">Aeropostale, Inc.</a>" does not exist. You can <a href="/wiki/Wikipedia:Articles_for_creation" title="Wikipedia:Articles for creation">ask for it to be created</a>, but consider checking the search results below to see whether the topic is already covered.</i><br/> 
+For search help, please visit <a href="/wiki/Help:Searching" title="Help:Searching">Help:Searching</a>.</p>
+
+<!-- Search results fetched via search=[search9,search9], highlight=[search19,search14], suggest=[search2] in 75 ms -->
+<ul class='mw-search-results'>
+<li><div class='mw-search-result-heading'><a href="/wiki/A%C3%A9ropostale_(clothing)" title="Aéropostale (clothing)"><span class='searchmatch'>Aéropostale</span> (clothing)</a> <span class='searchalttitle'>(redirect from <a href="/wiki/Aeropostale_Inc." title="Aeropostale Inc."><span class='searchmatch'>Aeropostale</span> <span class='searchmatch'>Inc</span>.</a>)</span> </div> <div class='searchresult'><span class='searchmatch'>Aéropostale</span>, <span class='searchmatch'>Inc</span>. year-old young women and men through its <span class='searchmatch'>Aéropostale</span> stores and 7-to-12-year-old kids through its P.S. from <span class='searchmatch'>Aéropostale</span> stores.  <b>...</b> </div>
+<div class='mw-search-result-data'>13 KB (1,733 words) - 21:41, 24 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/List_of_S%26P_400_companies" title="List of S&amp;P 400 companies">List of S&amp;P 400 companies</a>  </div> <div class='searchresult'>ARO | <span class='searchmatch'>Aeropostale</span> <span class='searchmatch'>Inc</span> | Consumer Discretionary | Apparel Retail | http://www. sec. gov/cgi-bin/browse-edgar? CIK ARO&action getcompany view <b>...</b> </div>
+<div class='mw-search-result-data'>74 KB (8,382 words) - 12:10, 14 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Our_Lady_of_Good_Counsel_High_School_(Montgomery_County,_Maryland)" title="Our Lady of Good Counsel High School (Montgomery County, Maryland)">Our Lady of Good Counsel High School (Montgomery County, Maryland)</a>  </div> <div class='searchresult'>Tom Johnson '76 – Chief Executive Officer, <span class='searchmatch'>Aeropostale</span>, <span class='searchmatch'>Inc</span>. Marty Hurney  '74 – General Manager, Carolina Panthers  Chas Gessner  '99 –  <b>...</b> </div>
+<div class='mw-search-result-data'>20 KB (2,804 words) - 22:00, 21 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Companies_listed_on_the_New_York_Stock_Exchange_(A)" title="Companies listed on the New York Stock Exchange (A)">Companies listed on the New York Stock Exchange (A)</a>  </div> <div class='searchresult'>A !: <span class='searchmatch'>Aeropostale</span>, <span class='searchmatch'>Inc</span>. ARO |  The AES Corporation  AES |  AES Trust III  AESPRC |  Aetna, <span class='searchmatch'>Inc</span>. AET |  Affiliated Managers Group  AMG |  <b>...</b> </div>
+<div class='mw-search-result-data'>16 KB (1,217 words) - 01:02, 8 November 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Dick%27s_Sporting_Goods" title="Dick's Sporting Goods">Dick's Sporting Goods</a> <span class='searchalttitle'>(redirect from <a href="/wiki/Dick%27s_Sporting_Goods_Inc." title="Dick's Sporting Goods Inc.">Dick's Sporting Goods <span class='searchmatch'>Inc</span>.</a>)</span> </div> <div class='searchresult'>Dick's Sporting Goods, <span class='searchmatch'>Inc</span>. (DKS), or Dick's, is a Fortune 500 American corporation in the  <b>...</b> External links : <span class='searchmatch'>Aeropostale</span>, <span class='searchmatch'>Inc</span>.  et al .'" <b>...</b> </div>
+<div class='mw-search-result-data'>11 KB (1,405 words) - 18:12, 20 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/South_Hills_Village" title="South Hills Village">South Hills Village</a>  </div> <div class='searchresult'>American Eagle Outfitters , Hollister Co., <span class='searchmatch'>Aéropostale</span> , J.Crew , Ann Taylor Loft , Banana Republic , Lucky Brand Jeans , and an Apple, <span class='searchmatch'>Inc</span>. store.  <b>...</b> </div>
+<div class='mw-search-result-data'>6 KB (797 words) - 20:49, 22 September 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Slezak" title="Slezak">Slezak</a>  </div> <div class='searchresult'>Edward M. Slezak (born 1969), Senior Vice President, General Counsel and Secretary of <span class='searchmatch'>Aéropostale</span> (clothing), <span class='searchmatch'>Inc</span>.  Greta Slezak; cs:Greta  <b>...</b> </div>
+<div class='mw-search-result-data'>2 KB (239 words) - 12:57, 1 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/List_of_companies_of_the_United_States" title="List of companies of the United States">List of companies of the United States</a>  </div> <div class='searchresult'>A : a21  <b>...</b> <span class='searchmatch'>Aéropostale</span>  AES Corporation  Aetna  <b>...</b> Palm, <span class='searchmatch'>Inc</span>., now split into PalmOne, <span class='searchmatch'>Inc</span>. and PalmSource, <span class='searchmatch'>Inc</span>. Pan American World Airways  <b>...</b> </div>
+<div class='mw-search-result-data'>22 KB (2,182 words) - 10:46, 24 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/List_of_New_York_companies" title="List of New York companies">List of New York companies</a>  </div> <div class='searchresult'>A : <span class='searchmatch'>Aéropostale</span> (clothing) Alcoa -(Principal Headquarters)  <b>...</b> Altria Group (previously named Philip Morris Companies <span class='searchmatch'>Inc</span>.)  Ambac Financial  <b>...</b> </div>
+<div class='mw-search-result-data'>7 KB (681 words) - 09:22, 1 November 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Julian_Geiger" title="Julian Geiger">Julian Geiger</a>  </div> <div class='searchresult'>He has been Chairman of the Board at <span class='searchmatch'>Aeropostale</span>, <span class='searchmatch'>Inc</span>.  since August 1998 References : NAME Julian R. Geiger | ALTERNATIVE NAMES  | SHORT  <b>...</b> </div>
+<div class='mw-search-result-data'>1 KB (169 words) - 06:33, 25 October 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Southgate_Centre" title="Southgate Centre">Southgate Centre</a>  </div> <div class='searchresult'>Safeway , HMV , Coles , Coach, <span class='searchmatch'>Inc</span>., Bench  and Geox  and many other <b>...</b> <span class='searchmatch'>Aeropostale</span> and Michael Kors recently opened stores in the centre. <b>...</b> </div>
+<div class='mw-search-result-data'>3 KB (339 words) - 04:46, 6 May 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Peninsula_Town_Center" title="Peninsula Town Center">Peninsula Town Center</a>  </div> <div class='searchresult'>Mall , an enclosed facility constructed in 1973 by Mall Properties <span class='searchmatch'>Inc</span>.  <b>...</b> Other retail tenants include: <span class='searchmatch'>Aeropostale</span>, Anthony Vince Nail Spa <b>...</b> </div>
+<div class='mw-search-result-data'>6 KB (957 words) - 21:05, 29 May 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/MSG_Plus" title="MSG Plus">MSG Plus</a>  </div> <div class='searchresult'><span class='searchmatch'>Inc</span>. (which was spun off from Cablevision  in 2009) under the banner <b>...</b> Jason Horowitz: <span class='searchmatch'>Aeropostale</span> College Basketball Weekly host; Liberty  <b>...</b> </div>
+<div class='mw-search-result-data'>21 KB (3,098 words) - 06:17, 16 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Newpark_Mall" title="Newpark Mall">Newpark Mall</a>  </div> <div class='searchresult'>The new company under which it will be managed is Rouse Properties, <span class='searchmatch'>Inc</span> <b>...</b> The Marin  Farmers  <b>...</b> Other retailers : <span class='searchmatch'>Aéropostale</span>  Bath & Body Works  <b>...</b> </div>
+<div class='mw-search-result-data'>3 KB (395 words) - 08:59, 20 November 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Halifax_Shopping_Centre" title="Halifax Shopping Centre">Halifax Shopping Centre</a>  </div> <div class='searchresult'>The mall is owned by 20 VIC Management <span class='searchmatch'>Inc</span>.,  <b>...</b> Many high-profile retailers opened in 2011 including Sephora , Hollister Co., <span class='searchmatch'>Aeropostale</span> ,  <b>...</b> </div>
+<div class='mw-search-result-data'>3 KB (369 words) - 18:11, 31 October 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/North_East_Mall" title="North East Mall">North East Mall</a>  </div> <div class='searchresult'><span class='searchmatch'>Aéropostale</span> (clothing) (Nordstrom  Wing)  <b>...</b> Anchors : Coach, <span class='searchmatch'>Inc</span>. (Nordstrom  Wing)  Dick's Sporting Goods  (In former Saks Fifth Avenue  store <b>...</b> </div>
+<div class='mw-search-result-data'>8 KB (1,117 words) - 07:17, 19 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/West_Acres_Shopping_Center" title="West Acres Shopping Center">West Acres Shopping Center</a>  </div> <div class='searchresult'><span class='searchmatch'>Aéropostale</span>  (formerly Sam Goody ), opened in 2002.  American Eagle  <b>...</b> Finish Line, <span class='searchmatch'>Inc</span>. (formerly B. Dalton Bookseller ), opened in 2009.  <b>...</b> </div>
+<div class='mw-search-result-data'>4 KB (484 words) - 01:27, 21 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Aeropostal_Alas_de_Venezuela" title="Aeropostal Alas de Venezuela">Aeropostal Alas de Venezuela</a>  </div> <div class='searchresult'>In 1929, the French company <span class='searchmatch'>Aéropostale</span>  (known as Lignes Aériennes  <b>...</b> Inflight magazine: Pasajero is published by Playalens, <span class='searchmatch'>Inc</span>.,  <b>...</b> </div>
+<div class='mw-search-result-data'>15 KB (2,086 words) - 17:25, 14 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Do_Something" title="Do Something">Do Something</a>  </div> <div class='searchresult'>Do Something and <span class='searchmatch'>Aéropostal</span>e's the campaign Teens for Jeans was created in 2008 to raise awareness among teens about the one-third of  <b>...</b> </div>
+<div class='mw-search-result-data'>14 KB (2,097 words) - 03:14, 21 December 2011</div></li>
+<li><div class='mw-search-result-heading'><a href="/wiki/Black_Friday_(shopping)" title="Black Friday (shopping)">Black Friday (shopping)</a>  </div> <div class='searchresult'>Other retailers, like Sears , <span class='searchmatch'>Aéropostale</span> , and Kmart , began Black  <b>...</b> References : htm Toys "R" Us, <span class='searchmatch'>Inc</span>.,  Annual Report on Form 10-K for the  <b>...</b> </div>
+<div class='mw-search-result-data'>31 KB (4,486 words) - 15:32, 21 December 2011</div></li>
+</ul>
+</div><p class='mw-search-pager-bottom'>View (previous 20 |  <a href="/w/index.php?title=Special:Search&amp;limit=20&amp;offset=20&amp;redirs=1&amp;ns0=1&amp;search=Aeropostale%2C+Inc.+" title="Next 20 results" class="mw-nextlink">next 20</a>) (<a href="/w/index.php?title=Special:Search&amp;redirs=1&amp;ns0=1&amp;search=Aeropostale%2C+Inc.+&amp;limit=20&amp;offset=0" title="Show 20 results per page" class="mw-numlink">20</a> | <a href="/w/index.php?title=Special:Search&amp;redirs=1&amp;ns0=1&amp;search=Aeropostale%2C+Inc.+&amp;limit=50&amp;offset=0" title="Show 50 results per page" class="mw-numlink">50</a> | <a href="/w/index.php?title=Special:Search&amp;redirs=1&amp;ns0=1&amp;search=Aeropostale%2C+Inc.+&amp;limit=100&amp;offset=0" title="Show 100 results per page" class="mw-numlink">100</a> | <a href="/w/index.php?title=Special:Search&amp;redirs=1&amp;ns0=1&amp;search=Aeropostale%2C+Inc.+&amp;limit=250&amp;offset=0" title="Show 250 results per page" class="mw-numlink">250</a> | <a href="/w/index.php?title=Special:Search&amp;redirs=1&amp;ns0=1&amp;search=Aeropostale%2C+Inc.+&amp;limit=500&amp;offset=0" title="Show 500 results per page" class="mw-numlink">500</a>)</p>
+				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://en.wikipedia.org/wiki/Special:Search">http://en.wikipedia.org/wiki/Special:Search</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+		<li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Special%3ASearch&amp;returntoquery=search%3DAeropostale%252C%2BInc.%2B" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-special" class="selected"><span><a href="/w/index.php?title=Special%3ASearch&amp;search=Aeropostale,+Inc.+"  title="This is a special page which you cannot edit">Special page</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs emptyPortlet">
+	<h5>Views</h5>
+	<ul>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+						<input type="text" name="search" value="Aeropostale, Inc." title="Search Wikipedia [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search Wikipedia for this text" id="searchButton"><img src="//bits.wikimedia.org/skins-1.18/vector/images/search-ltr.png?303-4" alt="Search" /></button>					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(//upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+			<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+			<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+			<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+			<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+			<li id="n-sitesupport"><a href="//wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal" id='p-interaction'>
+	<h5>Interaction</h5>
+	<div class="body">
+		<ul>
+			<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+			<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+			<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+			<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+			<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal" id='p-tb'>
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+			<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+			<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/skins-1.18/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mw.loader.load(["mediawiki.special.search", "mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.gadget.wmfFR2011Style", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch", "ext.UserBuckets", "ext.articleFeedback.startup", "ext.articleFeedbackv5.startup"]);
+}
+</script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;303-4" type="text/javascript"></script>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"wikilove-enabled":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"gadget-wmfFR2011Style":1});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: enwiki:resourceloader:filter:minify-js:4:b41a86ec4e0fe8329bc3ce917e792339 */
+}
+</script><script src="//geoiplookup.wikimedia.org/" type="text/javascript"></script><!-- Served by srv203 in 0.243 secs. -->
+	</body>
+</html>

@@ -1,0 +1,6 @@
+SELECT DISTINCT CompanyName FROM company WHERE SECTOR='Healthcare' AND INDUSTRY='Medical Instruments &amp; Supplies'
+SELECT DISTINCT CompanyName FROM company WHERE SECTOR='Healthcare' AND INDUSTRY='Health Care Plans'
+SELECT DISTINCT CompanyName FROM company WHERE SECTOR='Technology' AND INDUSTRY='Scientific & Technical Instruments'
+SELECT DISTINCT CompanyName FROM company WHERE SECTOR='Technology' AND INDUSTRY='Personal Computers'
+SELECT DISTINCT CompanyName FROM company WHERE SECTOR='Services' AND INDUSTRY='Auto Dealerships'
+SELECT DISTINCT CompanyName FROM company WHERE SECTOR='Services' AND INDUSTRY='Education & Training Services'
