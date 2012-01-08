@@ -1,4 +1,4 @@
-<?
+<?php
 include("..\W3C_lib\LIB_http.php");
 include("..\W3C_lib\LIB_parse.php");
 include("..\W3C_lib\LIB_SearchTr.php");

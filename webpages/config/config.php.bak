@@ -1,0 +1,238 @@
+<?php
+//Liabilities and Shareholders' Equity
+//# Corrspond to website MSN money row names;
+
+
+$counter = 3;
+$COLUMN_NAME[1] = 'Period End Date';
+$COLUMN_NAME[2] = 'Book Value/Share';
+# Income Statement
+$COLUMN_NAME[3] = 'Revenue';
+$COLUMN_NAME[4] = 'Total Revenue';
+$COLUMN_NAME[5] = 'Cost of Revenue, Total';
+$COLUMN_NAME[6] = 'Gross Profit'; 
+$COLUMN_NAME[7] = 'Selling/General/Administrative Expenses, Total';
+$COLUMN_NAME[8] = 'Research & Development';
+$COLUMN_NAME[9] = 'Depreciation/Amortization'; //折舊
+$COLUMN_NAME[10] = 'Interest Expense (Income), Net Operating';
+$COLUMN_NAME[11] = 'Unusual Expense (Income)';
+$COLUMN_NAME[12] = 'Other Operating Expenses, Total';
+$COLUMN_NAME[13] = 'Operating Income';
+$COLUMN_NAME[14] = 'Interest Income (Expense), Net Non-Operating';
+$COLUMN_NAME[15] = 'Gain (Loss) on Sale of Assets';
+$COLUMN_NAME[16] = 'Other, Net';
+$COLUMN_NAME[17] = 'Income Before Tax';
+$COLUMN_NAME[18] = 'Income Tax - Total';
+$COLUMN_NAME[19] = 'Income After Tax';
+$COLUMN_NAME[20] = 'Minority Interest';
+$COLUMN_NAME[21] = 'Equity In Affiliates';
+$COLUMN_NAME[22] = 'U.S. GAAP Adjustment';
+$COLUMN_NAME[23] = 'Net Income Before Extra. Items';
+$COLUMN_NAME[24] = 'Total Extraordinary Items';
+$COLUMN_NAME[25] = 'Net Income';
+$COLUMN_NAME[26] = 'Total Adjustments to Net Income';
+$COLUMN_NAME[27] = 'Basic Weighted Average Shares';
+$COLUMN_NAME[28] = 'Basic EPS Excluding Extraordinary Items';
+$COLUMN_NAME[29] = 'Basic EPS Including Extraordinary Items';
+$COLUMN_NAME[30] = 'Diluted Weighted Average Shares';
+$COLUMN_NAME[31] = 'Diluted EPS Excluding Extrordinary Items';
+$COLUMN_NAME[32] = 'Diluted EPS Including Extraordinary Items';
+$COLUMN_NAME[33] = 'Dividends per Share - Common Stock Primary Issue';
+$COLUMN_NAME[34] = 'Gross Dividends - Common Stock';
+$COLUMN_NAME[35] = 'Interest Expense, Supplemental';
+$COLUMN_NAME[36] = 'Depreciation, Supplemental';
+$COLUMN_NAME[37] = 'Normalized EBITDA';
+$COLUMN_NAME[38] = 'Normalized EBIT';
+$COLUMN_NAME[39] = 'Normalized Income Before Tax';
+$COLUMN_NAME[40] = 'Normalized Income After Taxes';
+$COLUMN_NAME[41] = 'Normalized Income Available to Common';
+$COLUMN_NAME[42] = 'Basic Normalized EPS';
+$COLUMN_NAME[43] = 'Diluted Normalized EPS';
+$COLUMN_NAME[44] = 'Amortization of Intangibles'; // Annual 才有 季報沒有
+
+$COLUMN_INDEX['income']['start'] = 3;
+$COLUMN_INDEX['income']['end'] = 44;
+# Balance Sheet
+$COLUMN_NAME[45] = 'Cash and Short Term Investments';
+$COLUMN_NAME[46] = 'Total Receivables, Net';
+$COLUMN_NAME[47] = 'Total Inventory';
+$COLUMN_NAME[48] = 'Prepaid Expenses';
+$COLUMN_NAME[49] = 'Other Current Assets, Total';
+$COLUMN_NAME[50] = 'Total Current Assets';
+
+$COLUMN_NAME[51] = 'Property/Plant/Equipment, Total - Net';
+$COLUMN_NAME[52] = 'Goodwill, Net';
+$COLUMN_NAME[53] = 'Intangibles, Net';
+$COLUMN_NAME[54] = 'Long Term Investments';
+$COLUMN_NAME[55] = 'Note Receivable - Long Term';
+$COLUMN_NAME[56] = 'Other Long Term Assets, Total';
+$COLUMN_NAME[57] = 'Other Assets, Total';
+$COLUMN_NAME[58] = 'Total Assets';
+
+$COLUMN_NAME[59] = 'Accounts Payable';
+$COLUMN_NAME[60] = 'Payable/Accrued';
+$COLUMN_NAME[61] = 'Notes Payable/Short Term Debt';
+$COLUMN_NAME[62] = 'Current Port. of LT Debt/Capital Leases';
+$COLUMN_NAME[63] = 'Other Current Liabilities, Total';
+$COLUMN_NAME[64] = 'Total Current Liabilities';
+
+$COLUMN_NAME[65] = 'Total Long Term Debt';
+$COLUMN_NAME[66] = 'Deferred Income Tax';
+$COLUMN_NAME[67] = 'Minority Interest';
+$COLUMN_NAME[68] = 'Other Liabilities, Total';
+$COLUMN_NAME[69] = 'Total Liabilities';
+
+$COLUMN_NAME[70] = 'Redeemable Preferred Stock';
+$COLUMN_NAME[71] = 'Preferred Stock - Non Redeemable, Net';
+$COLUMN_NAME[72] = 'Common Stock';
+$COLUMN_NAME[73] = 'Additional Paid-In Capital';
+$COLUMN_NAME[74] = 'Retained Earnings (Accumulated Deficit)';
+$COLUMN_NAME[75] = 'Treasury Stock - Common';
+$COLUMN_NAME[76] = 'Other Equity, Total';
+$COLUMN_NAME[77] = 'Total Equity';
+$COLUMN_NAME[78] = "Total Liabilities & Shareholders' Equity";//?? CHECK
+$COLUMN_NAME[79] = 'Total Common Shares Outstanding';
+$COLUMN_NAME[80] = 'Total Preferred Shares Outstanding';
+
+$COLUMN_INDEX['balance']['start'] = 45;
+$COLUMN_INDEX['balance']['end'] = 80;
+#CashFlow
+$COLUMN_NAME[81] = 'Net Income/Starting Line';
+$COLUMN_NAME[82] = 'Depreciation/Depletion';
+$COLUMN_NAME[83] = 'Amortization';
+$COLUMN_NAME[84] = 'Deferred Taxes';
+$COLUMN_NAME[85] = 'Non-Cash Items';
+$COLUMN_NAME[86] = 'Changes in Working Capital';
+$COLUMN_NAME[87] = 'Cash from Operating Activities';
+$COLUMN_NAME[88] = 'Capital Expenditures';
+$COLUMN_NAME[89] = 'Other Investing Cash Flow Items, Total';
+$COLUMN_NAME[90] = 'Cash from Investing Activities';
+$COLUMN_NAME[91] = 'Financing Cash Flow Items';
+$COLUMN_NAME[92] = 'Total Cash Dividends Paid';
+$COLUMN_NAME[93] = 'Issuance (Retirement) of Stock, Net';
+$COLUMN_NAME[94] = 'Issuance (Retirement) of Debt, Net';
+$COLUMN_NAME[95] = 'Cash from Financing Activities';
+$COLUMN_NAME[96] = 'Foreign Exchange Effects';
+$COLUMN_NAME[97] = 'Net Change in Cash';
+$COLUMN_NAME[98] = 'Net Cash - Beginning Balance';
+$COLUMN_NAME[99] = 'Net Cash - Ending Balance';
+
+$COLUMN_INDEX['cash']['start'] = 81;
+$COLUMN_INDEX['cash']['end'] = 99;
+# Other Features
+$COLUMN_NAME[100] = 'EPS';
+$COLUMN_NAME[101] = 'ROE';// 自行計算
+$COLUMN_NAME[102] = 'MSN ROE 1 year';
+$COLUMN_NAME[103] = 'MSN ROE 5 years avg';
+$COLUMN_NAME[104] = 'Avg P/E';
+$COLUMN_NAME[105] = 'PE';
+
+$COLUMN_NAME[118] = 'MSN ROC 1 year';
+$COLUMN_NAME[119] = 'MSN ROC 5 years avg';
+#Income Statement other Features
+$COLUMN_NAME[106] = 'Gross Margin';
+$COLUMN_NAME[107] = 'S-Expense/Gross Profit';
+$COLUMN_NAME[108] = 'R&D-Exp/Gross Profit low';
+$COLUMN_NAME[109] = 'Depre./Gross Profit';
+$COLUMN_NAME[110] = 'Interset/Gross Profit';
+$COLUMN_NAME[111] = 'Income/Gross Profit';
+#BalanceSheet Other Features
+$COLUMN_NAME[112] = 'Receivables/Sales low';
+$COLUMN_NAME[113] = 'Cost/Inventory High';
+$COLUMN_NAME[114] = 'Equipment/Asset low';
+$COLUMN_NAME[115] = 'Debt Redeem yr';
+$COLUMN_NAME[116] = 'Debt/Equity';
+#CashFlow Other Features
+$COLUMN_NAME[117] = 'C-E/Net Income';
+
+for($i=1;$i<=119;$i++)
+{
+	$COLUMN_ID[$COLUMN_NAME[$i]] = $i;
+}
+/******************/
+$GROWTH_ELEMENT = array('BVPS','Revenue','Gross Profit','Operating Income','Income After Tax','EPS','Retained Earnings');
+$GROWTH_ID['BVPS 1 year'] = 1; 
+$GROWTH_ID['BVPS 3 year'] = 2; 
+$GROWTH_ID['BVPS 5 year'] = 3; 
+$GROWTH_ID['BVPS 9 year'] = 4;
+$GROWTH_ID['Revenue 1 year'] = 5; 
+$GROWTH_ID['Revenue 3 year'] = 6; 
+//$GROWTH_ID['Revenue 4 year'] = 7; 
+$GROWTH_ID['Revenue 4 year'] = 7; 
+$GROWTH_ID['Revenue 9 year'] = 8;  
+$GROWTH_ID['Gross Profit 1 year'] = 9; 
+$GROWTH_ID['Gross Profit 3 year'] = 10; 
+$GROWTH_ID['Gross Profit 5 year'] = 11; 
+$GROWTH_ID['Gross Profit 9 year'] = 12;
+$GROWTH_ID['Operating Income 1 year'] = 13; 
+$GROWTH_ID['Operating Income 3 year'] = 14; 
+$GROWTH_ID['Operating Income 5 year'] = 15; 
+$GROWTH_ID['Operating Income 9 year'] = 16;
+$GROWTH_ID['Income After Tax 1 year'] = 17; 
+$GROWTH_ID['Income After Tax 3 year'] = 18; 
+$GROWTH_ID['Income After Tax 5 year'] = 19; 
+$GROWTH_ID['Income After Tax 9 year'] = 20;
+$GROWTH_ID['EPS 1 year'] = 21; 
+$GROWTH_ID['EPS 3 year'] = 22; 
+$GROWTH_ID['EPS 5 year'] = 23; 
+$GROWTH_ID['EPS 9 year'] = 24;
+$GROWTH_ID['Retained Earnings 1 year'] = 25; 
+$GROWTH_ID['Retained Earnings 3 year'] = 26; 
+$GROWTH_ID['Retained Earnings 5 year'] = 27; 
+$GROWTH_ID['Retained Earnings 9 year'] = 28;
+
+$result = array_keys($GROWTH_ID);
+//print_r($result);
+for($i=1;$i<=28;$i++)
+{
+	$GROWTH_NAME[$i] = $result[$i-1];
+}
+ 
+# Resource Url Mappings
+$URL['balance_sheet'] = 'http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx';
+$URL['book_value'] = 'http://beta.moneycentral.msn.com/investor/invsub/results/compare.asp';
+$URL['check_company'] = "http://moneycentral.msn.com/investor/common/findsymbol.asp?Company=";
+$SQL['address'] = "127.0.0.1";
+$SQL['database'] = "finance";
+$SQL['user'] = "root";
+$SQL['password'] = "";
+
+#TAI_Balance_Sheet
+//"http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=Balance&Symbol=US:ARO&stmtView=Qtr";
+//"http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=Balance&Symbol=US:ARO&stmtView=Ann";
+#TAI_Book_Value
+//"http://beta.moneycentral.msn.com/investor/invsub/results/compare.asp?Page=TenYearSummary&Symbol=US:ARO";
+#TAI_Cash_Flow
+//"http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=CashFlow&Symbol=US:ARO&stmtView=Ann";
+#TAI_EPS
+//"http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=10YearSummary&Symbol=US:"."$AKA";
+#TAI_Income_Statement
+//"http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=Income&symbol=US:ARO&stmtView=Ann";
+#TAI_PE
+//"http://beta.moneycentral.msn.com/investor/invsub/results/compare.asp?Page=TenYearSummary&Symbol=US:ARO";
+#TAI_ROE
+//http://beta.moneycentral.msn.com/investor/invsub/results/compare.asp?Page=InvestmentReturns&Symbol=US:ARO
+
+$MSN_BASE = 'http://beta.moneycentral.msn.com/investor/invsub/results/';
+$MSN_PAGE[0] = 'statemnt.aspx?';
+$MSN_PAGE[1] = 'compare.aspx?';
+$MSN_PAGE[2] = 'compare.asp?'; //for ROE
+$MSN_PARAM['balance'] = 'lstStatement=Balance&Symbol=US:';
+$MSN_PARAM['income'] = 'lstStatement=Income&Symbol=US:';
+$MSN_PARAM['cash'] = 'lstStatement=CashFlow&Symbol=US:';
+$MSN_PARAM['book'] = 'Page=TenYearSummary$Symbol=US:';
+$MSN_PARAM['ROE'] = 'Page=InvestmentReturns&Symbol=US:';
+//$MSN_PARAM['balance_qtr'] = 'lstStatement=Balance';
+//$MSN_PARAM['income_ann'] = 'lstStatement=Balance';
+//$MSN_PARAM['income_qtr'] = 'lstStatement=Balance';
+//$MSN_PARAM['balance_ann'] = 'lstStatement=Balance';
+//$MSN_PARAM['cash_flow_ann'] = 'lstStatement=CashFlow&stmtView=Ann';
+//$MSN_PARAM['cash_flow_qtr'] = 'lstStatement=CashFlow&stmtView=Qtr';
+$MSN_PARAM['eps'] = 'lstStatement=10YearSummary';
+$VIEW['annual'] ='&stmtView=Ann';
+$VIEW['quarter'] ='&stmtView=Qtr';
+# BalanceSheet : $MSN_BASE.$MSN_PAGE[0].$MSN_PARAM['balance'].$SYMBOL.$VIEW['annual'];
+# Income Statement : $MSN_BASE.$MSN_PAGE[0].$MSN_PARAM['income'].$SYMBOL.$VIEW['annual'];
+# Cash_Flow : $MSN_BASE.$MSN_PAGE[0].$MSN_PARAM['cash'].$SYMBOL.$VIEW['annual'];
+# ROE : $MSN_BASE.$MSN_PAGE[2].$MSN_PARAM['ROE'].$SYMBOL
+?>
