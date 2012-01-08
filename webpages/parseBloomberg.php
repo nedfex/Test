@@ -1,4 +1,4 @@
-<?
+<?php
 include("..\W3C_lib\LIB_http.php");
 include("..\W3C_lib\LIB_parse.php");
 include("..\W3C_lib\LIB_SearchTr.php");
@@ -51,10 +51,10 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 		{
 			$element = parse_array($result[$j],"<td>","</td>");
 			
-			$companyName = trim(strip_tags($element[0]));
-			$companyurl = str_replace("\"","",return_between($element[0], "a href=",">","EXCL"));
-			$country = trim(strip_tags($element[1]));
-			$subindustry = trim(strip_tags($element[2]));
+			$companyName = addslashes(trim(strip_tags($element[0])));
+			$companyurl = addslashes(str_replace("\"","",return_between($element[0], "a href=",">","EXCL")));
+			$country = addslashes(trim(strip_tags($element[1])));
+			$subindustry = addslashes(trim(strip_tags($element[2])));
 			/*echo $companyName.$companyurl.$country.$industry."</br>";*/
 			//echo $baseURL.$companyurl."</br>";
 			
@@ -69,9 +69,9 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 					
 			$result2 = parse_array($webpage2['FILE'],"<table summary=\"Recently viewed\"","</table");
 			$temp = parse_array($webpage2['FILE'] ,"<a class=\"link_xs\" href=\"../../sectorandindustry/sectors", " SECTOR");
-			$sector = strip_tags($temp[0]."</a>");
+			$sector = addslashes(strip_tags($temp[0]."</a>"));
 			$temp = parse_array($webpage2['FILE'] ,"<a class=\"link_xs\" href=\"../../sectorandindustry/industries"," INDUSTRY" );
-			$industry = strip_tags($temp[0]."</a>");
+			$industry = addslashes(strip_tags($temp[0]."</a>"));
 			$temp = return_between($webpage2['FILE'] ,"<a class=\"link_sb\" href=\"","\" target" ,"EXCL");
 			if(strlen($temp)>100)
 				$temp = "";
@@ -79,8 +79,8 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 
 			$result2 = parse_array($result2[0],"<th ","</th");
 			$SYMBOL = explode(":", strip_tags($result2[0]));
-			$SYMBOL[0] = trim($SYMBOL[0]);
-			$SYMBOL[1] = trim($SYMBOL[1]);
+			$SYMBOL[0] = addslashes(trim($SYMBOL[0]));
+			$SYMBOL[1] = addslashes(trim($SYMBOL[1]));
 			
 			/*echo $country."</br>";
 			echo $companyName.$SYMBOL[0]."-".$SYMBOL[1]."</br>";
@@ -96,6 +96,13 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 		  
 		  if( mysql_affected_rows($link)==-1 )
 		  {
+		  	if(mysql_num_rows( mysql_query( "SELECT * FROM  `companyb` WHERE  `SYMBOL` =  '$SYMBOL[0]';"))==1)
+		  	{
+		  		echo "$SYMBOL[0] exists\n";
+		  		$error_counter = 0;
+		  		continue;
+		  	}
+		  	
 		  	$j--;
 		  	$error_counter++;
 		  	

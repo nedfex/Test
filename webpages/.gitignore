@@ -1,3 +1,4 @@
 config.php
 config_old.php
 currency.txt
+*.bak
