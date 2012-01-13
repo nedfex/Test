@@ -22,13 +22,14 @@ echo "START AT ".$letter[$alpha_start].", PAGE : ".$page_start.", company_start 
 fclose($fp);
 
 //return;
-
+$number_of_company  = 0;
 for( $h = $alpha_start ; $h < count($letter) ; $h++)
 {
 	$webpage = http_get("http://investing.businessweek.com/research/common/symbollookup/symbollookup.asp?letterIn=".$letter[$h],"");
 
 	$result = return_between($webpage['FILE'],"returned ","public company results",'EXCL');
 	$number_of_company = str_replace(',','',$result);
+	
 	$number_of_pages = ceil($number_of_company/180);
 	
 	for($i=$page_start;$i< $number_of_pages;$i++)
@@ -60,6 +61,8 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			//echo $companyurl."\n";
 			$capid = return_between( $companyurl."END" ,".asp?capId=","END" ,"EXCL");
 			//echo $capid;
+			if( mysql_num_rows( mysql_query( "SELECT * FROM  `companyb` WHERE  `CAPID` = '$capid';")) ==1)
+				continue;
 			
 			$webpage2 = http_get($baseURL.$companyurl , "");
 			
@@ -100,8 +103,9 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 		  
 		  if($SYMBOL[0]=="UNDEFINED")
 		  {
-		  	echo "UNDEFINED::PASSED\n";
-		  	continue;
+		  	echo "UNDEFINED::";
+		  	$SYMBOL[1]="";
+		  	//continue;
 		  }
 		  
 		  if( mysql_affected_rows($link)==-1 )
