@@ -167,4 +167,36 @@ function paybacktime($MarketCap,$Income,$Growth)
 	}
 	return $year;
 }
+function UpdateROEROIC($SYMBOL,$link)//update the newest ROE ROIC data , this function will be called after catching a new finicial data.(ROE ROIC only need to be computed once).
+{
+	$query = "SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL' ;"; 
+	$result = mysql_query($query,$link);
+	
+	if($result == false)
+		return false;
+	
+	$row = mysql_fetch_array($result);
+	$year  = $row['ANNUAL'];
+	
+	$sql = "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".$year."` WHERE `SYMBOL` = '$SYMBOL';";
+	$this_year_data = mysql_query($sql);
+	
+	$this_year_row = mysql_fetch_array($this_year_data );
+	
+	$one_year_row   =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($year-1)."` WHERE SYMBOL = '$SYMBOL';"));
+	$two_year_row   =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($year-2)."` WHERE SYMBOL = '$SYMBOL';"));
+	$three_year_row =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($year-3)."` WHERE SYMBOL = '$SYMBOL';"));
+	$four_year_row  =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($year-4)."` WHERE SYMBOL = '$SYMBOL';"));
+	
+	$ROE_mean_3_years = ($this_year_row[$COLUMN_ID['ROE']] + $one_year_row[$COLUMN_ID['ROE']] + $two_year_row[$COLUMN_ID['ROE']])/3;
+	$ROE_mean_5_years = ($this_year_row[$COLUMN_ID['ROE']] + $one_year_row[$COLUMN_ID['ROE']] + $two_year_row[$COLUMN_ID['ROE']]+ $three_year_row[$COLUMN_ID['ROE']]+ $four_year_row[$COLUMN_ID['ROE']])/5;
+	$ROC_mean_3_years = ($this_year_row[$COLUMN_ID['ROC']] + $one_year_row[$COLUMN_ID['ROC']] + $two_year_row[$COLUMN_ID['ROC']])/3;
+	$ROC_mean_5_years = ($this_year_row[$COLUMN_ID['ROC']] + $one_year_row[$COLUMN_ID['ROC']] + $two_year_row[$COLUMN_ID['ROC']]+ $three_year_row[$COLUMN_ID['ROC']]+ $four_year_row[$COLUMN_ID['ROC']])/5;
+	
+	$sql = "UPDATE `$year` SET `".$COLUMN_ID['ROE 3 year']."` = '$ROE_mean_3_years' , `".$COLUMN_ID['ROE 5 year']."` = '$ROE_mean_5_years' , `".$COLUMN_ID['ROC 3 year']."` = '$ROC_mean_3_years' , `".$COLUMN_ID['ROC 5 year']."` = '$ROC_mean_5_years' WHERE `SYMBOL` = '$this_year_row[SYMBOL]';";
+	mysql_query($sql);
+
+	return true;
+	
+}
 ?>

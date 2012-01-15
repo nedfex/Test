@@ -46,11 +46,11 @@ function growth($SYMBOL)
 	$keys = array_keys($growth_data);
 	$insert = "UPDATE `finance`.`growth` SET ";
 	
-	for($i=0;$i<count($keys);$i++)
+	for($i=0;$i < count($keys);$i++)
 	{
 		//if($growth_data[$keys[$i]]!=Null)
 		$insert .= "`".$GROWTH_ID[$keys[$i]]."` = ".$growth_data[$keys[$i]].",";
-		}
+	}
 	$insert[strlen($insert)-1] = " ";//去掉最後一個 ','
 	$insert.=" WHERE `growth`.`SYMBOL` = '$SYMBOL' ;";
 	

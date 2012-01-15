@@ -35,8 +35,8 @@ function DisplayCompanyData($SYMBOL)
 	$row = mysql_fetch_array($result);
 	$this_year_net_income = $row[$COLUMN_ID['Income After Tax']];
 	
-	echo "<tr><td bgcolor = #CCCCCC>ROC(ROIC)</td><td>".$row[118]."%</td><td>NA%</td><td>".$row[119]."%</td><td>NA%</td></tr>";
-	echo "<tr><td bgcolor = #CCCCCC>ROE</td><td>".$row[102]."%</td><td>NA%</td><td>".$row[103]."%</td><td>NA%</td></tr>";
+	echo "<tr><td bgcolor = #CCCCCC>ROC(ROIC)</td><td>".roundpoint2(100*$row[$COLUMN_ID['ROC']])."%</td><td>".roundpoint2(100*$row[$COLUMN_ID['ROC 3 year']])."%</td><td>".roundpoint2(100*$row[$COLUMN_ID['ROC 5 year']])."%</td><td>NA%</td></tr>";
+	echo "<tr><td bgcolor = #CCCCCC>ROE</td><td>".roundpoint2(100*$row[$COLUMN_ID['ROE']])."%</td><td>".roundpoint2(100*$row[$COLUMN_ID['ROE 3 year']])."%</td><td>".roundpoint2(100*$row[$COLUMN_ID['ROE 5 year']])."%</td><td>NA%</td></tr>";
 	
 	//get newest debt
 	$query = "SELECT * FROM `$today[qtr]` WHERE `SYMBOL` = '$SYMBOL';";
