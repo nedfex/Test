@@ -107,7 +107,7 @@ if (false)
 	echo "<font color= #ff0000>Calculate other features</font></br>";
 	calculate($row['SYMBOL']);
 	echo "<font color= #ff0000>ROE</font></br>";
-	ROE($row['SYMBOL']); //處裡自行計算之ROE , ROC 以及從MSN抓之一年期及五年期平均ROE
+	ROE($row['SYMBOL']); //糧B繡怞萓甈兜算之ROE , ROC 瞼H瞻帢qMSN禮鴗岑一礎~織d峇簫礎~織e簫禮癒ROE
 	echo "<font color= #ff0000>GROWTH</font></br>";
 	growth($row['SYMBOL']);
 	setCompanyActive($row['SYMBOL']);
@@ -174,10 +174,11 @@ function getCompanyProfile($SYMBOL)
 		//$web_page = http_get("http://financials.morningstar.com/company-profile/c.action?t=".$SYMBOL."&region=USA&culture=en-us", "");
 		$sql = "SELECT * FROM `intro` WHERE `SYMBOL` = '$SYMBOL';";
 		$result = mysql_query($sql,$link);
+		$row = mysql_fetch_array($result);
 	
-		if ( $result && mysql_num_rows($result)!= 0 )
+		if ( $result && mysql_num_rows($result)!= 0 && $row['UPDATE_DATE']!=NULL )
 		{
-			$row =  mysql_fetch_array($result);
+			//$row =  mysql_fetch_array($result);
 			$table_array  = $row['INTRODUCTION'];
 		}
 		else
@@ -185,7 +186,7 @@ function getCompanyProfile($SYMBOL)
 			$web_page = http_get("http://www.google.com/finance?q=".$SYMBOL , "");
 			$table_array = strip_tags( trim( return_between( $web_page['FILE'], "<div class=companySummary>", "<div","EXCL")));
 			//mysql_query("UPDATE `intro` SET `INTRODUCTION`='$table_array' ,`UPDATE_DATE`='$today[year]/$today[month]/$today[mday]' WHERE `SYMBOL`='$SYMBOL';");
-			if($table_array!="")
+			//if($table_array!="")
 				mysql_query("UPDATE `intro` SET `SYMBOL` = '$SYMBOL',`INTRODUCTION` = '$table_array',`UPDATE_DATE` = '$today[year]/$today[month]/$today[mday]' WHERE `SYMBOL` = '$SYMBOL';");
 			
 		}

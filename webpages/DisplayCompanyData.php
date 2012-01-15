@@ -48,7 +48,7 @@ function DisplayCompanyData($SYMBOL)
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result);
 	
-	// ¥ý¦L¥XROC , ROE
+	// Â¥ï¿½OC , ROE
 	$ind = array(0,5,1,3,2,6,4);
 	/*for($i=1;$i<=28;$i+=4)
 	{

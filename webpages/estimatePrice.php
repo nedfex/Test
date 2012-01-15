@@ -27,7 +27,7 @@ function estimatePrice($SYMBOL , $CurrentData)
 				$counter++;
 			}
 		}
-		$Avg_BVPS_Growth = $S / $counter; // ¥ı¥Î¤º©w¦¨ªø²vºâ 
+		$Avg_BVPS_Growth = $S / $counter; // Â¥ï¿½wÂ¦Â¨Âªï¿½ 
 
 		$FINAL_GROWTH = $Avg_BVPS_Growth;
 		if($FINAL_GROWTH > $CurrentData['MSN_GROWTH'] && $CurrentData['MSN_GROWTH']!= Null)
@@ -37,9 +37,9 @@ function estimatePrice($SYMBOL , $CurrentData)
 		$default_PE = 2*100*$FINAL_GROWTH;
 		$futureEPS = roundpoint2($EPS * pow(1+$FINAL_GROWTH , 10));
 				
-		// ¥¼¨ÓPE ­pºâ :growth *2  forwardPE ²{¦b PE , fundmental - key ratio 5 year summary ¤§ 5 ¦~¥­§¡(5Äæ¦ì)
+		// Â¥Â¼Â¨ÒE Â­pÂºŞºgrowth *2  forwardPE Â²{Â¦b PE , fundmental - key ratio 5 year summary Â¤Â§ 5 Â¦~Â¥Â­Â§Â¡(5Å¦Â¦ê§
 
-		for($i=0;$i<=4;$i++) //key ratio 5 year summary ¤§ 5 ¦~¥­§¡(5Äæ¦ì)
+		for($i=0;$i<=4;$i++) //key ratio 5 year summary Â¤Â§ 5 Â¦~Â¥Â­Â§Â¡(5Å¦Â¦ê§
 		{
 			$query = "SELECT `".$COLUMN_ID['Avg P/E']."` FROM `".($ANNUAL-$i)."` WHERE `SYMBOL` = '$SYMBOL';";
 			$row = mysql_fetch_array(mysql_query($query));
@@ -69,7 +69,7 @@ function estimatePrice($SYMBOL , $CurrentData)
 		echo "<tr><td>Now EPS</td><td>$CurrentData[EPS]</td><td>Future EPS</td><td class='future_eps_value'>".roundpoint2($futureEPS)."</td>";
 		echo "<td><font color = #0000ff>".($ANNUAL+10)." Price</font></td><td><font color = #ff0000 class='future_price_value'>$Future_Price_Afte_Ten_Year</font></td></tr>";
 		
-		for($i=0;$i<=9;$i++) //ROE 10 ¦~¥­§¡
+		for($i=0;$i<=9;$i++) //ROE 10 Â¦~Â¥Â­Â§Â¡
 		{
 			$query = "SELECT `".$COLUMN_ID['ROE']."` FROM `".($ANNUAL-$i)."` WHERE `SYMBOL` = '$SYMBOL';";
 			$row = mysql_fetch_array(mysql_query($query));
@@ -93,7 +93,7 @@ function estimatePrice($SYMBOL , $CurrentData)
 		$ans['final_growth'] = $FINAL_GROWTH;
 		return $ans;
 		
-		//ªş±a±ø¥ó Market Cap  ¥²¶·­n¤j©ó 100 mil
+		//Âªï¿½ñŸŒ¡rket Cap  Â¥Â²Â¶Â·Â­nÂ¤jÂ©ñ¯°0 mil
 		
 }
 ?>

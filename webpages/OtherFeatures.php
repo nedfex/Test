@@ -2,7 +2,7 @@
 function OtherFeatures($SYMBOL)
 {
 	include("/config/config.php");
-	$link=ConnectDB($SQL);
+	$link=mysql_connect('140.115.49.72','root','721215');
 	$selectresult=mysql_select_db("finance",$link);
 	
 	$today = getdate(); 
