@@ -87,6 +87,22 @@ $result =mysql_query($query,$link);
 if( $result && mysql_num_rows($result)==0 )
 {
 	echo "SYMBOL <b>\" $row[SYMBOL] \"</b> is not found.</br>";
+	//return;
+	
+	$query= "SELECT * FROM `company` WHERE `CompanyName` LIKE '%$row[SYMBOL]%';";
+	$result = mysql_query($query);
+	
+	if(mysql_num_rows($result)==0)
+	{
+		echo "Company  <b>\" $row[SYMBOL] \"</b> is not found</br>";
+		return;
+	}
+	
+	for($i=0;$i<mysql_num_rows($result);$i++)
+	{
+		$row = mysql_fetch_array($result);
+		echo "<a href = \"catchData.php?SYMBOL_NAME=$row[SYMBOL]\">Do you mean : <b>$row[CompanyName]($row[SYMBOL])</b>?</a></br>";
+	}
 	return;
 }
 
