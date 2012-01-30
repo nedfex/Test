@@ -27,20 +27,22 @@ for($h=0; $h < mysql_num_rows($R);$h++)
 	$row = mysql_fetch_array($R);
 	
 	$NullCount = 0;
+	$GoodCount = 0;
 	for($j = 1;$j<=26;$j++)
 	{
-		if($row["$j"]==Null)
+		if($row[$j] == Null)
 		{
 			$NullCount++;
 		}
-		else if( $row["$j"] < $GL )
+		else if( $row["$j"] > $GL )
 		{
-			$flag = False;
-			break;
+			//$flag = False;
+			//break;
+			$GoodCount++;
 		}
 	}
 	
-	if( $flag==True && $NullCount < 10)
+	if( $flag==True && $NullCount < 10 && $GoodCount > 17)
 	{
 		//$query = "UPDAT `growth` SET `29` = 1 WHERE `SYMBOL` = '$row[SYMBOL]';";
 		//mysql_query($query);
@@ -70,13 +72,15 @@ for($h=0; $h < mysql_num_rows($R);$h++)
 		$Now_Price = getCurrentPrice($row['SYMBOL']);
 		$First_Law_Savety_Price = roundpoint2(estimatePrice($row['SYMBOL']));
 		echo "<tr><td>Now price</td><td>$Now_Price</td></tr>";
-		echo "<tr><td>Safety Buy price below</td><td>$First_Law_Savety_Price</td>";
+		echo "<tr><td>Safety Buy price below</td><td>$First_Law_Savety_Price</td>"; 
 		if($First_Law_Savety_Price > $Now_Price)	
 			echo "<td><font color = #ff0000>!! BUY IN !!</font></td>";
 		else
 			echo "<td><font color = #0000ff> ...WAIT...</font></td></tr>";
 		echo "</table>";*/		
-		DisplayCompanyData($row['SYMBOL']);		$GC++;
+		//DisplayCompanyData($row['SYMBOL']);	
+		echo "<a target = new href = \"catchData.php?SYMBOL_NAME=$row[SYMBOL]\">$row[SYMBOL]</a></br>";	
+		$GC++;
 	}
 	
 	

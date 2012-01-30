@@ -14,10 +14,13 @@ function EPS_Sales_Income($SYMBOL)
 	$target = "http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=10YearSummary&Symbol=US:"."$SYMBOL";
 	
 	$web_page = http_get($target, "");
-	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column1_INCS", "/table");
+	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_INCS", "/table");
 	                                    
 	if(count($table_array)==0)
-		return;                                    
+	{
+		echo "EPS table not found ,please check EPS.php</br>";
+		return;
+	}                                    
 	                                           
 	$EPS_row = 0;
 	
@@ -39,7 +42,7 @@ function EPS_Sales_Income($SYMBOL)
 		}
 	}
 	/*********************************** table2*/ 
-	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column1_BALS", "/table");
+	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_BALS", "/table");
 	
 	$product_row_array2 = parse_array($table_array[0], "<tr", "</tr>");
 	$temp_array2 = parse_array($product_row_array2[0],"<td", "</td>");

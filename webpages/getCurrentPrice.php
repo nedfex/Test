@@ -62,7 +62,10 @@ function getCurrentPE($SYMBOL)
 	$web_page = http_get($target,"");
 	$product_row_array = parse_array( $web_page['FILE'], "<tr","</tr>");
 	$MSN_GROWTH = SearchTr( $product_row_array ,'Company' );
-	$ans['MSN_GROWTH'] = substr($MSN_GROWTH[4],1,-2)/100;
+	$ans['MSN_GROWTH'] = NULL;
+	
+	if(count($MSN_GROWTH)!=0)
+		$ans['MSN_GROWTH'] = substr($MSN_GROWTH[4],1,-2)/100;
 		
 	$query = "UPDATE `finance`.`company` SET `PRICE` = $ans[PRICE] ," ;
 	if($ans['PE']!= NULL)

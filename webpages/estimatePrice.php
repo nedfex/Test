@@ -51,7 +51,7 @@ function estimatePrice($SYMBOL , $CurrentData)
 		//echo "5 years PE =".nonNullmean($AVPE).", Final PE = <font color = red>$FINAL_PE</font></br>";
 		echo "<tr><td colspan =6><p align = center><b>Price/Earning Eistmation</b></td></tr>";
 		echo "<tr><td>BVPS Growth</td><td>".roundpoint2(check_element($Avg_BVPS_Growth*100))."%</td>";
-		echo "<td>MSN Growth</td><td>".roundpoint2(check_element($CurrentData['MSN_GROWTH']*100))."%</td>";
+		echo "<td>MSN Growth</td><td>".($CurrentData['MSN_GROWTH']==Null? 'N/A' : roundpoint2(check_element($CurrentData['MSN_GROWTH']*100)))."%</td>";
 		echo "<td><font color = #0000ff>Final Growth</font></td><td><font color = #ff0000>".roundpoint2(check_element($FINAL_GROWTH*100))."%</font></td></tr>";
 		echo "<form name='pe_select_form' id='pe_select_form'>";
 		echo "<tr><td><input class='pe_ratio_title' type='radio' name='pe_ratio' value='default' />Default P/E</td><td class='pe_ratio_value'>".roundpoint2($default_PE)."</td>";
