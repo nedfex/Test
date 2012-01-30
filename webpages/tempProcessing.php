@@ -6,7 +6,7 @@ include("..\W3C_lib\LIB_http.php");
 $link = ConnectDB($SQL);
 set_time_limit(3600);
 
-/***** FILL MARKETCAP
+//***** FILL MARKETCAP
 $query= "SELECT * FROM `company`;";
 $result =mysql_query($query,$link);
 echo mysql_num_rows($result);
@@ -22,7 +22,7 @@ for($i=0;$i < mysql_num_rows($result);$i++)
 		echo "$row[SYMBOL] FILLed...</br>";
 	}
 }
-**************/
+//**************/
 
 /********* PROCESSING INSERT INTO INTRODUCTION*
 $query= "SELECT * FROM `companyy`;";
@@ -56,11 +56,12 @@ for($i=0;$i < mysql_num_rows($result);$i++)
 }
 
 fclose($fp);
-/***************************modify ROIC and ROE*/
+
+/***************************modify ROIC and ROE*
 //ROE = ($COLUMN_NAME[19] + $COLUMN_NAME[92] )/ total eqity(¥h¦~)
 //$COLUMN_NAME[77] = 'Total Equity';$COLUMN_NAME[65] = 'Total Long Term Debt';
 
-/*$years = array('2012','2011','2010','2009','2008','2007','2006','2005','2004');
+$years = array('2012','2011','2010','2009','2008','2007','2006','2005','2004');
 print_r($years);
 for($i = 0;$i < count( $years ) ; $i++)
 {
@@ -80,7 +81,7 @@ for($i = 0;$i < count( $years ) ; $i++)
 		{
 			$last_year_row = mysql_fetch_array($last_year_data);
 			
-			if( is_null($last_year_row[$COLUMN_ID['Total Equity']]) || $last_year_row[$COLUMN_ID['Total Equity']]==0 )
+			if( is_null($last_year_row[$COLUMN_ID['Total Equity']]) )
 				continue;
 			
 			$ROE = ($this_year_row[$COLUMN_ID['Income After Tax']] + $this_year_row[$COLUMN_ID['Total Cash Dividends Paid']])/($last_year_row[$COLUMN_ID['Total Equity']]);
@@ -88,14 +89,14 @@ for($i = 0;$i < count( $years ) ; $i++)
 			
 			//echo $ROE."--".$ROIC."</br>";
 			$sql = "UPDATE `$years[$i]` SET `".$COLUMN_ID['ROE']."` = '$ROE' , `".$COLUMN_ID['ROC']."` = '$ROC' WHERE `SYMBOL` = '$this_year_row[SYMBOL]';";
-			//echo $sql."\n";
 			mysql_query($sql);
+			//echo mysql_query($sql);
 			//return;
 		}
 		
 	}
-}*/
-/*** ROC 3,5 years average***/
+}
+*** ROC 3,5 years average***/
 $years = array('2011','2012','2010');
 for( $i = 0 ; $i < count( $years ) ; $i++)
 {
@@ -123,5 +124,5 @@ for( $i = 0 ; $i < count( $years ) ; $i++)
 		
 	}
 }
-
+**************************/
 ?>

@@ -1,4 +1,5 @@
 <html>
+<link href="htc.css" rel="stylesheet" type="text/css">
 	<head>
     	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     </head>
@@ -79,7 +80,7 @@ if(array_key_exists('SYMBOL_NAME',$_GET))
 }
 else
 {
-	$row['SYMBOL'] = "ARO";
+	$row['SYMBOL'] = "GOOG";
 }
 
 $query= "SELECT * FROM `company` WHERE `SYMBOL` =  '$row[SYMBOL]';";
@@ -123,14 +124,14 @@ if (false)
 	echo "<font color= #ff0000>Calculate other features</font></br>";
 	calculate($row['SYMBOL']);
 	echo "<font color= #ff0000>ROE</font></br>";
-	ROE($row['SYMBOL']); //�B�̦ۦ�p�⤧ROE , ROC �H�αqMSN�줧�@�~���Τ��~������ROE
+	ROE($row['SYMBOL']); //處裡自行計算之ROE , ROC 以及從MSN抓之一年期及五年期平均ROE
 	echo "<font color= #ff0000>GROWTH</font></br>";
 	growth($row['SYMBOL']);
 	setCompanyActive($row['SYMBOL']);
 }
 
 DisplayCompanyData($row['SYMBOL']);
-echo "<table border = 2><th colspan =2 >Other Imformation of $row[SYMBOL]</th><tr><td>";
+echo "<table border = 2><th colspan =2 bgcolor=#c0c0c0>Other Imformation of $row[SYMBOL]</th><tr><td>";
 getCompetitor($row['SYMBOL']);
 echo "</td><td>";
 getCompanyProfile($row['SYMBOL']);
@@ -196,7 +197,8 @@ function getCompanyProfile($SYMBOL)
 			$row =  mysql_fetch_array($result);
 			$table_array  = $row['INTRODUCTION'];
 		}
-		else
+		
+		if( mysql_num_rows($result)== 0 || strlen($table_array )==0)//如果資料庫沒有這筆 , 或是intro沒有資料 就重抓
 		{
 			$web_page = http_get("http://www.google.com/finance?q=".$SYMBOL , "");
 			$table_array = strip_tags( trim( return_between( $web_page['FILE'], "<div class=companySummary>", "<div","EXCL")));

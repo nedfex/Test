@@ -20,12 +20,16 @@ function BalanceSheet( $SYMBOL ,$link )
 	  {
 	  	$CN = str_replace(' ','_',$Qtr[$i]);
 	  	$query = "INSERT INTO `$CN` (`SYMBOL`,`1`) VALUES( '$SYMBOL' , '$end_date[$i]');";
-	  	//echo $query."</br>";
+
 	  	mysql_query($query);
 	  	
 	  	if($i==1)
 	  	{
-	  		$query = "INSERT INTO `newest_date` (`SYMBOL`,`ACTIVE`,`QUARTER`) VALUES( '$SYMBOL' , '1' ,'$CN' );";
+	  		if(mysql_num_rows(mysql_query("SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL';"))>=1)
+	  			$query = "UPDATE `newest_date` SET `QUARTER` = '$CN' WHERE `SYMBOL` = '$SYMBOL';" ; 
+	  		else
+	  			$query = "INSERT INTO `newest_date` (`SYMBOL`,`ACTIVE`,`QUARTER`) VALUES( '$SYMBOL' , '1' ,'$CN' );";
+	  		//echo $query."</br>";
 	  		mysql_query($query);
 	  	}
 		
@@ -43,6 +47,7 @@ function BalanceSheet( $SYMBOL ,$link )
 	  {
 	  	
 	  	$CN = str_replace(' ','_',$Qtr[$i]);
+	  	//echo $CN;
 	  	$query = "UPDATE `finance`.`$CN` SET "; 
 	  	$counter = 0;
 	  	for($j=$COLUMN_INDEX['balance']['start'];$j <= $COLUMN_INDEX['balance']['end'];$j++)
@@ -74,12 +79,16 @@ function BalanceSheet( $SYMBOL ,$link )
 	  	$AN = $Ann[$i];
 	  	$end_date = SearchTrOld( $product_row_array ,'/20' );
 	  	$query = "INSERT INTO `$AN` (`SYMBOL`,`1`) VALUES( '$SYMBOL' ,'$end_date[$i]');";
-	  	//echo $query.'</br>';
+
 	  	mysql_query($query);
 	  	
 	  	if($i==1)
 	  	{
-	  		$query = "UPDATE `finance`.`newest_date` SET `ANNUAL` = $AN WHERE `newest_date`.`SYMBOL` = '$SYMBOL' ;";
+	  		if(mysql_num_rows(mysql_query("SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL';"))>=1)
+	  			$query = "UPDATE `newest_date` SET `ANNUAL` = '$AN' WHERE `SYMBOL` = '$SYMBOL';" ; 
+	  		else
+	  			$query = "INSERT INTO `newest_date` (`SYMBOL`,`ACTIVE`,`ANNUAL`) VALUES( '$SYMBOL' , '1' ,'$AN' );";
+	  		//echo $query."</br>";
 	  		mysql_query($query);
 	  	}
 	  }

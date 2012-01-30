@@ -20,11 +20,11 @@ function growth($SYMBOL)
 	mysql_query("INSERT INTO `growth` (`SYMBOL`) VALUES( '$SYMBOL' );");
 	//$insert = "UPDATE `finance`.`growth` SET ";
 	
-	for($i=0;$i <count($YD);$i++)
+	for($i=0;$i < count($YD) ; $i++)
 	{
 		$T = $today['year']-$YD[$i];
 		$rows = mysql_query("SELECT * FROM `$T` WHERE `SYMBOL` = '$SYMBOL';");
-		////echo "SELECT * FROM `$T` WHERE `SYMBOL` = '$SYMBOL';</br>";
+		echo "SELECT * FROM `$T` WHERE `SYMBOL` = '$SYMBOL';</br>";
 		
 		if( mysql_num_rows($rows)==0 )
 			continue;
@@ -44,18 +44,17 @@ function growth($SYMBOL)
 		return;
 	
 	$keys = array_keys($growth_data);
-	$insert = "UPDATE `finance`.`growth` SET ";
+	$insert = "UPDATE `growth` SET ";
 	
 	for($i=0;$i < count($keys);$i++)
 	{
 		//if($growth_data[$keys[$i]]!=Null)
-		$insert .= "`".$GROWTH_ID[$keys[$i]]."` = ".$growth_data[$keys[$i]].",";
+		$insert .= "`".$GROWTH_ID[$keys[$i]]."` = '".$growth_data[$keys[$i]]."',";
 	}
 	$insert[strlen($insert)-1] = " ";//去掉最後一個 ','
-	$insert.=" WHERE `growth`.`SYMBOL` = '$SYMBOL' ;";
+	$insert.=" WHERE `SYMBOL` = '$SYMBOL' ;";
 	
-  //echo $insert."</br>";
+  echo $insert."</br>";
  	mysql_query($insert);   
-	mysql_close($link);
 }
 ?>

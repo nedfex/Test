@@ -19,6 +19,7 @@ function DisplayCompanyData($SYMBOL)
 		
 	$today = getdate();
 	$query = "SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL';";
+
 	$result = mysql_fetch_array(mysql_query($query ));
 	$today['year'] = $result['ANNUAL']; 	
 	$today['qtr'] =  $result['QUARTER'];
@@ -31,6 +32,7 @@ function DisplayCompanyData($SYMBOL)
 	echo "<tr><td></td><td align = center> 1 Year </td> <td align = center> 3 Year </td> <td align = center> 5 Year </td> <td align = center> 9 Year </td></tr>";
 	
 	$query = "SELECT * FROM `$today[year]` WHERE `SYMBOL` = '$SYMBOL';";
+	//echo $query;
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result);
 	$this_year_net_income = $row[$COLUMN_ID['Income After Tax']];
@@ -48,7 +50,7 @@ function DisplayCompanyData($SYMBOL)
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result);
 	
-	// ¥ý¦L¥XROC , ROE
+	// Â¥ï¿½OC , ROE
 	$ind = array(0,5,1,3,2,6,4);
 	/*for($i=1;$i<=28;$i+=4)
 	{
@@ -104,8 +106,9 @@ function DisplayCompanyData($SYMBOL)
 	//$CurrentData['PRICE']=getCurrentPrice($row['SYMBOL'],true);
 	$CurrentData['PRICE']=getCurrentPrice($row['SYMBOL'],false);//$CurrentData['PRICE']=getCurrentPrice($row['SYMBOL'],true););
 	$ans = estimatePrice($row['SYMBOL'],$CurrentData );
-		
-	$payback_years = 	 paybacktime( $row['MARKET_CAP'],$this_year_net_income,$ans['final_growth']);
+
+	$payback_years = paybacktime( $row['MARKET_CAP'],$this_year_net_income,$ans['final_growth']);
+
 	echo "<tr><td>Market Cap</td><td>$row[MARKET_CAP]</td><td>Net Income</td><td>$this_year_net_income</td><td><font color = #0000ff>Payback</font></td>";
 	if($payback_years<=10 && $payback_years>6)
 		echo "<td bgcolor = yellow>$payback_years  years</td></tr>";
@@ -115,7 +118,7 @@ function DisplayCompanyData($SYMBOL)
 		echo "<td bgcolor = #CCCCCC>$payback_years  years</td></tr>";
 	
 	echo "<tr><td>Now Price</td><td colspan=5><p align = center><b>$".$CurrentData['PRICE']."</b></td></tr>";
-	echo "<tr><td>Rule #1 Safety Price</td><td colspan=5><p align = center>$<b class='now_safty_price_value'>".$ans['safety price']."</b></td></tr>";
+	echo "<tr><td>Rule #1 Safety Price</td><td colspan=5><p align = center>$<b class='now_safty_price_value'>".roundpoint2($ans['safety price'])."</b></td></tr>";
 	if($ans['safety price'] > $CurrentData['PRICE'])	
 		echo "<th colspan =6 bgcolor = 00ff00><font color = #ff0000>BUY</font></th>";
 	else

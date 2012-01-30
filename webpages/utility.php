@@ -77,7 +77,7 @@ function growth_rate($start,$end,$years)
 }
 function check_element($element)
 {
-	if($element == Null)
+	if( is_null($element) )
 		return 'N/A';
 	else
 	return $element;
@@ -159,11 +159,19 @@ function paybacktime($MarketCap,$Income,$Growth)
 {
 	$m =0;
 	$year = 0;
+	
+	if($Growth <= 0 || $Income <= 0)
+	{
+		//echo $Growth;
+		return 'N/A';
+	}
+		
 	while($m < $MarketCap)
 	{
 		$Income = $Income *(1+$Growth);
 		$m = $m + $Income ;
 		$year++;
+		//echo $year.'-'.$Growth."\n";
 	}
 	return $year;
 }

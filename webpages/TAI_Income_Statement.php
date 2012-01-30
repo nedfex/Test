@@ -2,7 +2,7 @@
 function Income_Statement($SYMBOL)
 {
 	include("/config/config.php");
-
+	//$link=mysql_connect('140.115.49.72','root','721215');
 	$link = ConnectDB($SQL);
 	$selectresult=mysql_select_db("finance",$link);
 
