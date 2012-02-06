@@ -1,3 +1,6 @@
+<html>
+<link href="htc.css" rel="stylesheet" type="text/css">
+<body>
 <?php
 
 //Market Cap 必須大於 100 mill
@@ -78,7 +81,7 @@ for($h=0; $h < mysql_num_rows($R);$h++)
 		else
 			echo "<td><font color = #0000ff> ...WAIT...</font></td></tr>";
 		echo "</table>";*/		
-		//DisplayCompanyData($row['SYMBOL']);	
+		DisplayCompanyData($row['SYMBOL']);	
 		echo "<a target = new href = \"catchData.php?SYMBOL_NAME=$row[SYMBOL]\">$row[SYMBOL]</a></br>";	
 		$GC++;
 	}
@@ -89,4 +92,5 @@ echo "<p>There are $GC good companies.(Growth > ".(100*$GL)."%)</p>";
 //mysql_close($link);
 
 ?>
+</body></html>
 
