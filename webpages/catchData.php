@@ -99,7 +99,7 @@ if( $result && mysql_num_rows($result)==0 )
 		return;
 	}
 	
-	for($i=0;$i<mysql_num_rows($result);$i++)
+	for($i=0;$i < mysql_num_rows($result) ; $i++)
 	{
 		$row = mysql_fetch_array($result);
 		echo "<a href = \"catchData.php?SYMBOL_NAME=$row[SYMBOL]\">Do you mean : <b>$row[CompanyName]($row[SYMBOL])</b>?</a></br>";
@@ -113,21 +113,21 @@ if (false)
 	echo "<font color= #ff0000>Balance Sheet</font></br>";
 	BalanceSheet($row['SYMBOL'],$link);
 	echo "<font color= #ff0000>Income Statement</font></br>";
-	Income_Statement($row['SYMBOL']);
+	Income_Statement($row['SYMBOL'],$link);
 	echo "<font color= #ff0000>Cash Flow</font></br>";
-	Cash_Flow($row['SYMBOL']);
+	Cash_Flow($row['SYMBOL'],$link);
 	echo "<font color= #ff0000>PE_BOOK_VALUE</font></br>";
-	PE_BOOK_VALUE($row['SYMBOL']);
+	PE_BOOK_VALUE($row['SYMBOL'],$link);
 	echo "<font color= #ff0000>EPS_Sales_Income</font></br>";
 	
-	EPS_Sales_Income($row['SYMBOL']);
+	EPS_Sales_Income($row['SYMBOL'],$link);
 	echo "<font color= #ff0000>Calculate other features</font></br>";
-	calculate($row['SYMBOL']);
+	calculate($row['SYMBOL'],$link);
 	echo "<font color= #ff0000>ROE</font></br>";
-	ROE($row['SYMBOL']); //處裡自行計算之ROE , ROC 以及從MSN抓之一年期及五年期平均ROE
+	ROE($row['SYMBOL'],$link); //處裡自行計算之ROE , ROC 以及從MSN抓之一年期及五年期平均ROE
 	echo "<font color= #ff0000>GROWTH</font></br>";
-	growth($row['SYMBOL']);
-	setCompanyActive($row['SYMBOL']);
+	growth($row['SYMBOL'],$link);
+	setCompanyActive($row['SYMBOL'],$link);
 }
 
 DisplayCompanyData($row['SYMBOL']);
@@ -136,6 +136,7 @@ getCompetitor($row['SYMBOL']);
 echo "</td><td>";
 getCompanyProfile($row['SYMBOL']);
 echo "</td></tr></table>";
+mysql_close($link);
 
 function getCompetitor($SYMBOL) //by CHART
 {
@@ -180,7 +181,7 @@ function getCompetitor($SYMBOL) //by CHART
 		}
 		echo "</table>";
 	}
-	
+
 }
 function getCompanyProfile($SYMBOL)
 {

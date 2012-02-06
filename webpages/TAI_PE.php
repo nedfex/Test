@@ -1,17 +1,19 @@
 <?php
 # Initialization
 // Catch AVG PE , BOOK VALUE/SHARE 
-function PE_BOOK_VALUE($SYMBOL)
+function PE_BOOK_VALUE($SYMBOL,$link)
 {
 	include("/config/config.php");
-	$link = ConnectDB($SQL);
+	//$link = ConnectDB($SQL);
 	$selectresult = mysql_select_db("finance",$link);
 	
 	$query = "SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL';";
 	$result = mysql_fetch_array(mysql_query($query ));
 	$today['year'] = $result['ANNUAL'];  
 	
-	$Avg_PE_target = "http://beta.moneycentral.msn.com/investor/invsub/results/compare.asp?Page=TenYearSummary&Symbol=US:".$SYMBOL;
+	//舊版連結$Avg_PE_target = "http://beta.moneycentral.msn.com/investor/invsub/results/compare.asp?Page=TenYearSummary&Symbol=US:".$SYMBOL;
+	$Avg_PE_target = "http://investing.money.msn.com/investments/key-ratios?symbol=".$SYMBOL."&page=TenYearSummary";
+	
 	$web_page = http_get($Avg_PE_target, "");
 	$table_array = parse_array($web_page['FILE'], "<table", "</table>");
 	
@@ -49,7 +51,8 @@ function PE_BOOK_VALUE($SYMBOL)
 		}
 	}
 	
-	if(stristr( $table_array[1], "BOOK VALUE/ SHARE" ))
+	//if(stristr( $table_array[1], "BOOK VALUE/ SHARE" )) MSN 網頁改舊版
+	if(stristr( $table_array[1], "VALUE/" ))//先暫時改這樣
 	{
 	
 		$product_row_array = parse_array($table_array[1], "<tr", "</tr>");
@@ -72,7 +75,7 @@ function PE_BOOK_VALUE($SYMBOL)
 	
 	$PE = 0;
 	$PE_counter =0;
-	for($i=0;$i<count($Ann);$i++)
+	for($i=0;$i< count($Ann);$i++)
 	{
 		$AN = $Ann[$i];
 		$query = "UPDATE `finance`.`$AN` SET "; 
@@ -102,8 +105,6 @@ function PE_BOOK_VALUE($SYMBOL)
 	$query.="WHERE `$today[year]`.`SYMBOL` = '$SYMBOL' ;"; 
 	mysql_query($query);
 	//echo $query."</br>";
-	
-	mysql_close($link);
 }
 
 

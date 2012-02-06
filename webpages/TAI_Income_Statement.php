@@ -1,5 +1,5 @@
 <?php
-function Income_Statement($SYMBOL)
+function Income_Statement($SYMBOL,$link)
 {
 	include("/config/config.php");
 	//$link=mysql_connect('140.115.49.72','root','721215');
@@ -84,6 +84,6 @@ function Income_Statement($SYMBOL)
 	  }
 
 	}
-	mysql_close($link);
+	//mysql_close($link);
 }
 ?>

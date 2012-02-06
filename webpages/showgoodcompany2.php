@@ -78,8 +78,8 @@ for($h=0; $h < mysql_num_rows($R);$h++)
 		else
 			echo "<td><font color = #0000ff> ...WAIT...</font></td></tr>";
 		echo "</table>";*/		
-		//DisplayCompanyData($row['SYMBOL']);	
-		echo "<a target = new href = \"catchData.php?SYMBOL_NAME=$row[SYMBOL]\">$row[SYMBOL]</a></br>";	
+		DisplayCompanyData($row['SYMBOL']);	
+		//echo "<a target = new href = \"catchData.php?SYMBOL_NAME=$row[SYMBOL]\">$row[SYMBOL]</a></br>";	
 		$GC++;
 	}
 	

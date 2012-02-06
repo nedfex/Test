@@ -1,10 +1,10 @@
 <?php
 
-function growth($SYMBOL)
+function growth($SYMBOL	,$link)
 {
 	include("/config/config.php");
 	//include("utility.php");
-	$link = ConnectDB($SQL);
+	//$link = ConnectDB($SQL);
 	$selectresult = mysql_select_db("finance",$link);
 	
 	$today = getdate();

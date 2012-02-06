@@ -99,7 +99,7 @@ function return_annual($period)
 	}
 
 }
-function setCompanyActive($SYMBOL)
+function setCompanyActive($SYMBOL,$link)
 {
 	//$link = mysql_connect('127.0.0.1','root','721215');
 	$selectresult = mysql_select_db("finance");
