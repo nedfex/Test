@@ -15,8 +15,8 @@ function EPS_Sales_Income($SYMBOL,$link)
 	$target = "http://beta.investing.money.msn.com/investments/financial-statements?symbol=US%3a".$SYMBOL;
 	
 	$web_page = http_get($target, "");
-	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_INCS", "/table");
-	                                    
+	//改回舊版$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_INCS", "/table");
+	$table_array = parse_array($web_page['FILE'], "<table class=\" mnytbl\" summary=\"\">","</table");                           
 	if(count($table_array)==0)
 	{
 		echo "EPS table not found ,please check EPS.php</br>";
@@ -26,10 +26,13 @@ function EPS_Sales_Income($SYMBOL,$link)
 	$EPS_row = 0;
 	
 	$product_row_array = parse_array($table_array[0], "<tr", "</tr>");
-	$temp_array = parse_array($product_row_array[0],"<td", "</td>");
+	$temp_array = parse_array($product_row_array[0],"<th", "</th>");
 	
-	for($i=0;$i<count($temp_array);$i++) # Record column Name
-		$col_name[$i] = strip_tags(trim($temp_array[$i]));
+	for($i=0 ; $i < count($temp_array);$i++) # Record column Name
+	{
+		$col_name[$i] = str_replace(" ","",strip_tags(trim($temp_array[$i])));
+		echo 'aa'.$col_name[$i]."aa";
+	}
 	$col_name[0] = 'Date';
 	
 	for($i=1;$i<count($product_row_array);$i++)# Parse the Table
@@ -43,9 +46,9 @@ function EPS_Sales_Income($SYMBOL,$link)
 		}
 	}
 	/*********************************** table2*/ 
-	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_BALS", "/table");
+	//舊版網頁第二個TABLE就是所需的$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_BALS", "/table");
 	
-	$product_row_array2 = parse_array($table_array[0], "<tr", "</tr>");
+	$product_row_array2 = parse_array($table_array[1], "<tr", "</tr>");
 	$temp_array2 = parse_array($product_row_array2[0],"<td", "</td>");
 	
 	for($i=0;$i<count($temp_array2);$i++) # Record column Name
@@ -89,3 +92,4 @@ function EPS_Sales_Income($SYMBOL,$link)
 	//mysql_close($link);
 }
 ?>
+<span> DEPRECIATION </span>

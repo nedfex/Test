@@ -181,7 +181,6 @@ function getCompetitor($SYMBOL) //by CHART
 		}
 		echo "</table>";
 	}
-
 }
 function getCompanyProfile($SYMBOL)
 {
