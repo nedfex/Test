@@ -6,11 +6,11 @@ include("../W3C_lib/LIB_parse.php");
 include("estimatePrice.php");
 include("../W3C_lib/LIB_searchTr.php");*/
 
-function DisplayCompanyData($SYMBOL)
+function DisplayCompanyData($SYMBOL,$link)
 {
 	include("/config/config.php");
 	
-	$link = ConnectDB($SQL);
+	//$link = ConnectDB($SQL);
 	$selectresult=mysql_select_db("finance",$link);
 
 	$query = "SELECT * FROM `company` WHERE `SYMBOL` = '$SYMBOL';";
@@ -125,7 +125,7 @@ function DisplayCompanyData($SYMBOL)
 		echo "<th colspan =6 bgcolor = 00AAAAAA><font color = #0000ff>WAIT</font></th>";
 	
 	echo "</table></td></tr></table></br>";
-	mysql_close($link);
+	//mysql_close($link);
 }
 
 ?>

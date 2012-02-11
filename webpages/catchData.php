@@ -130,19 +130,31 @@ if (false)
 	setCompanyActive($row['SYMBOL'],$link);
 }
 
-DisplayCompanyData($row['SYMBOL']);
-echo "<table border = 2><th colspan =2 bgcolor=#c0c0c0>Other Imformation of $row[SYMBOL]</th><tr><td>";
-getCompetitor($row['SYMBOL']);
+DisplayCompanyData($row['SYMBOL'],$link);
+echo "<table border = 2><th colspan =3 bgcolor=#c0c0c0>Other Imformation of $row[SYMBOL]</th><tr><td>";
+getCompetitor($row['SYMBOL'],$link);
 echo "</td><td>";
-getCompanyProfile($row['SYMBOL']);
-echo "</td></tr></table>";
+getCompanyProfile($row['SYMBOL'],$link);
+echo "</td>";
+echo "<td><table border = 2><tr><td><a href = \"http://investing.money.msn.com/investments/stock-price?symbol=$row[SYMBOL]&ocid=qbeb\"  target=blank>MSN Money ($row[SYMBOL])</a></td></tr>";
+echo "<tr><td><a href = \"http://finance.yahoo.com/q?s=$row[SYMBOL]&ql=1\" target=blank>Yahoo! Finance ($row[SYMBOL])</a></td></tr>";
+echo "<tr><td><a href = \"http://www.google.com/finance?q=$row[SYMBOL]\" target=blank>Google Finance ($row[SYMBOL])</a></td></tr>";
+echo "<tr><td><a href = \"http://investing.businessweek.com/research/stocks/snapshot/snapshot.asp?ticker=$row[SYMBOL]:US&submit=GO\" target=blank>Bloomberg ($row[SYMBOL])</a></td></tr>";
+echo "<tr><td><a href = \"http://ycharts.com/companies/$row[SYMBOL]\" target=blank>YChart ($row[SYMBOL])</a></td></tr>";
+echo "<tr><th bgcolor=#c0c0c0>Charts</th></tr>";
+echo "<tr><td><a href = \"http://investing.money.msn.com/investments/charts/?symbol=$row[SYMBOL]#symbol=$row[SYMBOL]&event=&BB=off&CCI=off&EMA=10&FSO=off&MACD=17,8,9&MFI=off&PSAR=off&RSI=off&SMA=off&SSO=14,5&Volume=off&period=6m&linetype=Line&scale=Auto&comparelist=".'$indu,$compx,$inx'."\" target=blank><strong>MACD+KD+EMA LINES</strong></a></td></tr>";
+echo "<tr><th bgcolor=#c0c0c0>Major Holders</th></tr>";
+echo "<tr><td><a href = \"http://finance.yahoo.com/q/mh?s=".$row['SYMBOL']."+Major+Holders\" target=blank><strong>Holders</strong></a></td></tr>";
+echo "<tr><th bgcolor=#c0c0c0>Officers And Insider Trading</th></tr>";
+echo "<tr><td><a href = \"http://www.reuters.com/finance/stocks/companyOfficers?symbol=$row[SYMBOL]\" target=blank><strong>Officers</strong></a></td></tr>";
+echo "</table></tr></table>";
 mysql_close($link);
 
-function getCompetitor($SYMBOL) //by CHART
+function getCompetitor($SYMBOL,$link) //by CHART
 {
 	global $SQL,$URL,$today;
-	$link = mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);
-	$selectresult = mysql_select_db($SQL['database'],$link);
+	//link = mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);
+	//$selectresult = mysql_select_db($SQL['database'],$link);
 	//from gurufocus.com
 	
 	$sql = "SELECT * FROM `competitor` WHERE `SYMBOL` = '$SYMBOL'";
@@ -182,11 +194,11 @@ function getCompetitor($SYMBOL) //by CHART
 		echo "</table>";
 	}
 }
-function getCompanyProfile($SYMBOL)
+function getCompanyProfile($SYMBOL,$link)
 {
 		global $SQL,$URL,$today;
-		$link = mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);
-	  $selectresult = mysql_select_db($SQL['database'],$link);
+		//$link = mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);
+	  //$selectresult = mysql_select_db($SQL['database'],$link);
 
 		//$web_page = http_get("http://financials.morningstar.com/company-profile/c.action?t=".$SYMBOL."&region=USA&culture=en-us", "");
 		$sql = "SELECT * FROM `intro` WHERE `SYMBOL` = '$SYMBOL';";
