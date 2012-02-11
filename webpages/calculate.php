@@ -1,21 +1,8 @@
 <?php
 include("config\config.php");
 
-function connect_db(){
-	$link =;
-	if (!$link) {
-		die('Could not connect: ' . mysql_error());
-	}
-	mysql_select_db("finance");
-	/*
-	$result = mysql_query("SELECT SECTOR, SYMBOL FROM company");
-	
-	while ($row = mysql_fetch_array($result)) { 
-	}
-	*/
-}
 
-function calculate($symbol){
+function calculate($symbol,$link){
 	
 	#Get the required data for calculation
 		/*

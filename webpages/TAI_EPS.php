@@ -1,17 +1,18 @@
 <?php
 # for EPS
 # CATCH SALES,EPS,TOTAL NET INCOME(TABLE1) and CURRENT ASSETS, LIBILITES,LONR TERM DEBT(TABLE 2)
-function EPS_Sales_Income($SYMBOL)
+function EPS_Sales_Income($SYMBOL,$link)
 {
 	include("/config/config.php");
-	$link = ConnectDB($SQL);
+	//$link = ConnectDB($SQL);
 	$selectresult=mysql_select_db("finance",$link);
 	
 	$query = "SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL';";
 	$result = mysql_fetch_array(mysql_query($query ));
 	$today['year'] = $result['ANNUAL'];  
 	
-	$target = "http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=10YearSummary&Symbol=US:"."$SYMBOL";
+	//ºô­¶§ïÂÂª© $target = "http://beta.moneycentral.msn.com/investor/invsub/results/statemnt.aspx?lstStatement=10YearSummary&Symbol=US:"."$SYMBOL";
+	$target = "http://beta.investing.money.msn.com/investments/financial-statements?symbol=US%3a".$SYMBOL;
 	
 	$web_page = http_get($target, "");
 	$table_array = parse_array($web_page['FILE'], "ctl00_ctl00_ctl00_ctl00_HtmlBody_HtmlBody_HtmlBody_Column2_INCS", "/table");
@@ -85,6 +86,6 @@ function EPS_Sales_Income($SYMBOL)
 	
 	//print_r($product_array);
 	
-	mysql_close($link);
+	//mysql_close($link);
 }
 ?>

@@ -1,10 +1,10 @@
 <?php
-function ROE($SYMBOL) //³B¸Ì¦Û¦æ­pºâ¤§ROE ¥H¤Î±qMSN§ì¤§¤@¦~´Á¤Î¤­¦~´Á¥­§¡ROE(¥u¦³¤µ¦~¥i¥H§ì¨ì¤@¦~´Á¤Î¤­¦~´Á¥­§¡)
+function ROE($SYMBOL,$link) //³B¸Ì¦Û¦æ­pºâ¤§ROE ¥H¤Î±qMSN§ì¤§¤@¦~´Á¤Î¤­¦~´Á¥­§¡ROE(¥u¦³¤µ¦~¥i¥H§ì¨ì¤@¦~´Á¤Î¤­¦~´Á¥­§¡)
 {
 	include( "/config/config.php" );
 	//include( "utility.php" );
 	
-	$link = ConnectDB($SQL);
+	//$link = ConnectDB($SQL);
 	$selectresult = mysql_select_db("finance",$link);
 	$today = getdate();
 
@@ -12,7 +12,8 @@ function ROE($SYMBOL) //³B¸Ì¦Û¦æ­pºâ¤§ROE ¥H¤Î±qMSN§ì¤§¤@¦~´Á¤Î¤­¦~´Á¥­§¡ROE(¥u¦
 	$result = mysql_fetch_array(mysql_query($query ));
 	$today['year'] = $result['ANNUAL']; 
 	
-	$roe_target = $MSN_BASE.$MSN_PAGE[2].$MSN_PARAM['ROE'].$SYMBOL;
+	//ÂÂª©³sµ² $roe_target = $MSN_BASE.$MSN_PAGE[2].$MSN_PARAM['ROE'].$SYMBOL;
+	$roe_target = "http://investing.money.msn.com/investments/key-ratios?symbol=".$SYMBOL."&page=InvestmentReturns";
 	
 	$web_page    = http_get($roe_target, "");
 	$table_array = parse_array($web_page['FILE'], "<table", "</table>");

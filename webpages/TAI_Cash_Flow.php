@@ -1,8 +1,8 @@
 <?php
-function Cash_Flow($SYMBOL)
+function Cash_Flow($SYMBOL,$link)
 {
 	include("/config/config.php");
-	$link = ConnectDB($SQL);
+	//$link = ConnectDB($SQL);
 	$selectresult=mysql_select_db("finance",$link);
 	
 	$Cash_Flow_target_Qtr = $MSN_BASE.$MSN_PAGE[0].$MSN_PARAM['cash'].$SYMBOL.$VIEW['quarter'];
