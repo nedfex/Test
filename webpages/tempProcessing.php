@@ -7,21 +7,21 @@ $link = ConnectDB($SQL);
 set_time_limit(3600);
 
 //***** FILL MARKETCAP
-$query= "SELECT * FROM `company`;";
-$result =mysql_query($query,$link);
-echo mysql_num_rows($result);
-for($i=0;$i < mysql_num_rows($result);$i++)
-{
-	$row = mysql_fetch_array($result);
-
-	//if($row['MARKET_CAP'] =="" || $row['MARKET_CAP']=="NULL")
-	{
-		$MC = $row['PRICE'] * $row['SHARES_OUTSTANDING'];
-		$sql = "UPDATE `finance`.`company` SET `MARKET_CAP` = $MC WHERE `SYMBOL` = '$row[SYMBOL]';";
-		mysql_query($sql);
-		echo "$row[SYMBOL] FILLed...</br>";
-	}
-}
+//$query= "SELECT * FROM `company`;";
+//$result =mysql_query($query,$link);
+//echo mysql_num_rows($result);
+//for($i=0;$i < mysql_num_rows($result);$i++)
+//{
+//	$row = mysql_fetch_array($result);
+//
+//	//if($row['MARKET_CAP'] =="" || $row['MARKET_CAP']=="NULL")
+//	{
+//		$MC = $row['PRICE'] * $row['SHARES_OUTSTANDING'];
+//		$sql = "UPDATE `finance`.`company` SET `MARKET_CAP` = $MC WHERE `SYMBOL` = '$row[SYMBOL]';";
+//		mysql_query($sql);
+//		echo "$row[SYMBOL] FILLed...</br>";
+//	}
+//}
 //**************/
 
 /********* PROCESSING INSERT INTO INTRODUCTION*
@@ -97,32 +97,58 @@ for($i = 0;$i < count( $years ) ; $i++)
 	}
 }
 *** ROC 3,5 years average***/
-$years = array('2011','2012','2010');
-for( $i = 0 ; $i < count( $years ) ; $i++)
+//$years = array('2011','2012','2010');
+//for( $i = 0 ; $i < count( $years ) ; $i++)
+//{
+//	$sql = "SELECT `SYMBOL` , `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".$years[$i]."`;";
+//	$this_year_data = mysql_query($sql);
+//	
+//	for( $j = 0 ; $j < mysql_num_rows($this_year_data);$j++)
+//	{
+//		$this_year_row = mysql_fetch_array($this_year_data );
+//		
+//		$one_year_row   =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-1)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
+//		$two_year_row   =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-2)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
+//		$three_year_row =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-3)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
+//		$four_year_row  =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-4)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
+//		
+//		$ROE_mean_3_years = ($this_year_row[$COLUMN_ID['ROE']] + $one_year_row[$COLUMN_ID['ROE']] + $two_year_row[$COLUMN_ID['ROE']])/3;
+//		$ROE_mean_5_years = ($this_year_row[$COLUMN_ID['ROE']] + $one_year_row[$COLUMN_ID['ROE']] + $two_year_row[$COLUMN_ID['ROE']]+ $three_year_row[$COLUMN_ID['ROE']]+ $four_year_row[$COLUMN_ID['ROE']])/5;
+//		$ROC_mean_3_years = ($this_year_row[$COLUMN_ID['ROC']] + $one_year_row[$COLUMN_ID['ROC']] + $two_year_row[$COLUMN_ID['ROC']])/3;
+//		$ROC_mean_5_years = ($this_year_row[$COLUMN_ID['ROC']] + $one_year_row[$COLUMN_ID['ROC']] + $two_year_row[$COLUMN_ID['ROC']]+ $three_year_row[$COLUMN_ID['ROC']]+ $four_year_row[$COLUMN_ID['ROC']])/5;
+//		
+//		$sql = "UPDATE `$years[$i]` SET `".$COLUMN_ID['ROE 3 year']."` = '$ROE_mean_3_years' , `".$COLUMN_ID['ROE 5 year']."` = '$ROE_mean_5_years' , `".$COLUMN_ID['ROC 3 year']."` = '$ROC_mean_3_years' , `".$COLUMN_ID['ROC 5 year']."` = '$ROC_mean_5_years' WHERE `SYMBOL` = '$this_year_row[SYMBOL]';";
+//		mysql_query($sql);
+//		//echo, $sql."\n";
+//		//echo mysql_affected_rows($link);
+//		
+//	}
+//}
+
+
+/**************************/
+$query= "SELECT * FROM`newest_date` WHERE`ANNUAL`<100";
+$result =mysql_query($query,$link);
+echo mysql_num_rows($result);
+for($i=0;$i<mysql_num_rows($result);$i++)
 {
-	$sql = "SELECT `SYMBOL` , `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".$years[$i]."`;";
-	$this_year_data = mysql_query($sql);
+	$row = mysql_fetch_array($result);
+	echo $row['SYMBOL'].$row['ANNUAL']."</br>";
 	
-	for( $j = 0 ; $j < mysql_num_rows($this_year_data);$j++)
+	for($j=0;$j<10;$j++)
 	{
-		$this_year_row = mysql_fetch_array($this_year_data );
+		$Y = 2012-$j;
+		$r = mysql_query($sql = "SELECT * FROM `$Y` WHERE `SYMBOL` = '$row[SYMBOL]';");
+		if(mysql_num_rows($r)!=0)
+		{
+			$sql = "UPDATE `newest_date` SET `ANNUAL`='$Y' WHERE `SYMBOL` = '$row[SYMBOL]';";
+			echo $sql."</br>";
+			mysql_query($sql);
+			break;
+			
+		}
 		
-		$one_year_row   =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-1)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
-		$two_year_row   =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-2)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
-		$three_year_row =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-3)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
-		$four_year_row  =  mysql_fetch_array( mysql_query( "SELECT `".$COLUMN_ID['ROE']."` , `".$COLUMN_ID['ROC']."` FROM `".($years[$i]-4)."` WHERE SYMBOL = '$this_year_row[SYMBOL]';"));
-		
-		$ROE_mean_3_years = ($this_year_row[$COLUMN_ID['ROE']] + $one_year_row[$COLUMN_ID['ROE']] + $two_year_row[$COLUMN_ID['ROE']])/3;
-		$ROE_mean_5_years = ($this_year_row[$COLUMN_ID['ROE']] + $one_year_row[$COLUMN_ID['ROE']] + $two_year_row[$COLUMN_ID['ROE']]+ $three_year_row[$COLUMN_ID['ROE']]+ $four_year_row[$COLUMN_ID['ROE']])/5;
-		$ROC_mean_3_years = ($this_year_row[$COLUMN_ID['ROC']] + $one_year_row[$COLUMN_ID['ROC']] + $two_year_row[$COLUMN_ID['ROC']])/3;
-		$ROC_mean_5_years = ($this_year_row[$COLUMN_ID['ROC']] + $one_year_row[$COLUMN_ID['ROC']] + $two_year_row[$COLUMN_ID['ROC']]+ $three_year_row[$COLUMN_ID['ROC']]+ $four_year_row[$COLUMN_ID['ROC']])/5;
-		
-		$sql = "UPDATE `$years[$i]` SET `".$COLUMN_ID['ROE 3 year']."` = '$ROE_mean_3_years' , `".$COLUMN_ID['ROE 5 year']."` = '$ROE_mean_5_years' , `".$COLUMN_ID['ROC 3 year']."` = '$ROC_mean_3_years' , `".$COLUMN_ID['ROC 5 year']."` = '$ROC_mean_5_years' WHERE `SYMBOL` = '$this_year_row[SYMBOL]';";
-		mysql_query($sql);
-		//echo, $sql."\n";
-		//echo mysql_affected_rows($link);
-		
-	}
+		}
+	
 }
-**************************/
 ?>

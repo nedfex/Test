@@ -32,7 +32,7 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 	
 	$number_of_pages = ceil($number_of_company/180);
 	
-	for($i=$page_start;$i< $number_of_pages;$i++)
+	for($i=$page_start;$i < $number_of_pages;$i++)
 	{
 		$firstrow = $i * 180; 
 		$URL = "http://investing.businessweek.com/research/common/symbollookup/symbollookup.asp?letterIn=".$letter[$h]."&firstrow=$firstrow";
@@ -56,12 +56,12 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			$companyurl = addslashes(str_replace("\"","",return_between($element[0], "a href=",">","EXCL")));
 			$country = addslashes(trim(strip_tags($element[1])));
 			$subindustry = addslashes(trim(strip_tags($element[2])));
-			/*echo $companyName.$companyurl.$country.$industry."</br>";*/
+			//echo $companyName.$companyurl.$country.$industry."</br>";
 			//echo $baseURL.$companyurl."</br>";
 			//echo $companyurl."\n";
 			$capid = return_between( $companyurl."END" ,".asp?capId=","END" ,"EXCL");
 			//echo $capid;
-			if( mysql_num_rows( mysql_query( "SELECT * FROM  `companyb` WHERE  `CAPID` = '$capid';")) ==1)
+			if( mysql_num_rows( mysql_query( "SELECT * FROM  `companyb3` WHERE  `CAPID` = '$capid';")) ==1)
 				continue;
 			
 			$webpage2 = http_get($baseURL.$companyurl , "");
@@ -72,8 +72,22 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 				$j--;
 				continue;			
 			}
-					
-			$result2 = parse_array($webpage2['FILE'],"<table summary=\"Recently viewed\"","</table");
+			//$result2 = parse_array($webpage2['FILE'],"<table summary=\"Recently viewed\"","</table");//change here ; now we search other exchange to find all symbol
+			$result2 = parse_array($webpage2['FILE'],"<div class=\"listItem\">","<div class=\"exchgName\">");
+			$result3 = parse_array($webpage2['FILE'],"<div class=\"exchgName\">","</div>");//這個會多一個(tr) 所以要跳一個
+			
+			echo "There are ".count($result2)." other exchanges</br>\n";
+			//return;
+			if (count($result2)==0)
+			{
+				echo "SYMBOL unexisted...</br>\n";
+				continue;
+			}
+			//for($kk=0;$kk < count($result2);$kk++)
+			//	echo trim(strip_tags($result2[$kk]))."</br>\n";
+			//return;
+	
+			
 			$temp = parse_array($webpage2['FILE'] ,"<a class=\"link_xs\" href=\"../../sectorandindustry/sectors", " SECTOR");
 			$sector = addslashes(strip_tags($temp[0]."</a>"));
 			$temp = parse_array($webpage2['FILE'] ,"<a class=\"link_xs\" href=\"../../sectorandindustry/industries"," INDUSTRY" );
@@ -83,23 +97,40 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 			if(strlen($temp)>100)
 				$temp = "";
 			$company_webpage = $temp;
-
-			$result2 = parse_array($result2[0],"<th ","</th");
-			$SYMBOL = explode(":", strip_tags($result2[0]));
-			$SYMBOL[0] = addslashes(trim($SYMBOL[0]));
-			$SYMBOL[1] = addslashes(trim($SYMBOL[1]));
 			
-			/*echo $country."</br>";
-			echo $companyName.$SYMBOL[0]."-".$SYMBOL[1]."</br>";
-			echo $sector."</br>".$industry.$subindustry."</br>";*/
 			$sector = trim($sector);
 			$industry = trim($industry);
 			$subindustry = trim($subindustry);
 			$companyName = trim($companyName);
 			
-		  $sql = "INSERT INTO `companyb` (`SECTOR`,`INDUSTRY`,`SUB_INDUSTRY`,`CompanyName`,`SYMBOL`,`COUNTRY_SYMBOL`,`COUNTRY`,`WEBSITE`,`TICKER`,`CAPID`) VALUES( '$sector' ,'$industry','$subindustry','$companyName','$SYMBOL[0]','$SYMBOL[1]','$country','$company_webpage','$SYMBOL[0]:$SYMBOL[1]',$capid);";
-		  mysql_query($sql);
-		  echo $sql."=".mysql_affected_rows($link)."\n";
+			$sql="";
+			for($kk=0;$kk < count($result2);$kk++)
+			{
+
+				$SYMBOL = explode(":", trim(strip_tags($result2[$kk])));
+				$SYMBOL[0] = addslashes(trim($SYMBOL[0]));
+				$SYMBOL[1] = addslashes(trim($SYMBOL[1]));
+				
+				$EXCHANGE = trim(strip_tags($result3[$kk+1]));
+				
+				/*echo $country."</br>";
+				echo $companyName.$SYMBOL[0]."-".$SYMBOL[1]."</br>";
+				echo $sector."</br>".$industry.$subindustry."</br>";*/
+				if ($kk==0)
+					$sql= "INSERT INTO `companyb3` (`SECTOR`,`INDUSTRY`,`SUB_INDUSTRY`,`CompanyName`,`SYMBOL`,`COUNTRY_SYMBOL`,`COUNTRY`,`WEBSITE`,`TICKER`,`CAPID`,`EXCHANGE`) VALUES( '$sector' ,'$industry','$subindustry','$companyName','$SYMBOL[0]','$SYMBOL[1]','$country','$company_webpage','$SYMBOL[0]:$SYMBOL[1]',$capid,'$EXCHANGE');";
+				else
+					$sql= "INSERT INTO `companyb3` (`SECTOR`,`INDUSTRY`,`SUB_INDUSTRY`,`CompanyName`,`SYMBOL`,`COUNTRY_SYMBOL`,`COUNTRY`,`WEBSITE`,`TICKER`,`EXCHANGE`) VALUES( '$sector' ,'$industry','$subindustry','$companyName','$SYMBOL[0]','$SYMBOL[1]','$country','$company_webpage','$SYMBOL[0]:$SYMBOL[1]','$EXCHANGE');";
+				//only the first SYMBOL has BLOOMBERG CAPID;
+				mysql_query($sql);
+				echo $sql."=".mysql_affected_rows($link)."\n";
+//				if(mysql_affected_rows($link)==-1)
+//				{
+//					echo "INSERTION ERRROR OCCURED!!!\n";
+//					return;
+//				}
+			}
+		   
+		  //return;
 		  
 		  if($SYMBOL[0]=="UNDEFINED")
 		  {
@@ -141,7 +172,7 @@ for( $h = $alpha_start ; $h < count($letter) ; $h++)
 		$company_start = 1;	
 	}
 	$page_start = 0;
-	
+	//return;
 }	
 		
 ?>
