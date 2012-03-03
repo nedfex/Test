@@ -1,0 +1,35 @@
+<DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/tr/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>This page is temporarily unavailable</title>
+
+<style type="text/css">
+<!--
+body {margin: 0px; padding: 0px;}
+.error_wrap, .error_smalltxt {margin: 0 auto; padding: 0px; width: 605px; height: 330px; font-family:Verdana, Arial, Helvetica, sans-serif; color: #000; font-size: 14px; line-height:22px;}
+.error_box {margin: 20px 0px 20px 20px; width: 563px; height:350px; border: 1px solid #BBB; border-bottom: 1px solid #888; border-right: 1px solid #888; float: left; display: inline; background-color:#fdfdfd;}
+.error_logo {margin:15px 363px 15px 15px; padding: 0px; width:185px; height:41px; float: left; display: inline;}
+.error_logo a {outline: none;}
+.error_message {margin: 25px 15px 0px 15px; padding: 0px; text-align: left; height:92px; width: 533px; float: left; display: inline;}
+.error_rtnlink {margin: 20px 15px 15px 15px; padding: 0px 20px 0px 0px; height:20px; width: 515px; text-align:right; float: left; display: inline;}
+.error_rtnlink a {padding-right: 15px; font-size: 12px; color: #FF0000; background:url(http://im.mstar.com/im/errorpage_doublearrow.gif) no-repeat right; text-decoration: none; outline: none;}
+.error_shadow {margin: 20px 15px 20px 0px; width: 5px; height:230px; background:url(http://im.mstar.com/im/errorpage_shadow_230px.gif) no-repeat; float: left; display: inline;}
+.error_smalltxt {font-size: 12px; line-height:40px; color:#666;}
+-->
+</style>
+</head>
+
+<body>
+<!--[If !IE]> error box <![endif]-->
+<div class="error_wrap">
+    <div class="error_box">  
+        <div class="error_logo"><a href="http://www.morningstar.com"><img src="http://im.mstar.com/im/errorpage_mlogo.gif" width="185" height="41" border="0" alt="Morningstar Logo" /></a></div>
+        <div class="error_message"><b>This page is temporarily unavailable.</b><br/><br/>Dear customers,<br/>We apologize for any inconvenience but this page is currently unavailable. We are working to resolve the issue and appreciate your patience as we address the matter.<br/>
+<span class="error_smalltxt">&nbsp;</span><span class="error_rtnlink"><a href="http://www.morningstar.com">return to morningstar.com</a></span>
+</div>
+        
+    </div>
+    <div class="error_shadow">&nbsp;</div>
+</div>
+</body>
+</html>

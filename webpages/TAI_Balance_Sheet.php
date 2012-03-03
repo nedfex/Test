@@ -3,17 +3,19 @@ function BalanceSheet( $SYMBOL ,$link )
 {
 	include("/config/config.php");
 	
-	$Balance_Sheet_target_Qtr = $MSN_BASE.$MSN_PAGE[0].$MSN_PARAM['balance'].$SYMBOL.$VIEW['quarter'];
-	//echo $Balance_Sheet_target_Qtr."</br>";
+	//$Balance_Sheet_target_Qtr = $MSN_BASE.$MSN_PAGE[0].$MSN_PARAM['balance'].$SYMBOL.$VIEW['quarter'];
+	$Balance_Sheet_target_Qtr = "http://investing.money.msn.com/investments/stock-balance-sheet/?symbol=us%3A$SYMBOL&stmtView=Qtr";
+	echo $Balance_Sheet_target_Qtr."</br>";
 	$web_page = http_get($Balance_Sheet_target_Qtr, "");
 	$table_array = parse_array($web_page['FILE'], "<html", "</html>");
 		
 	$today = getdate(); 
-
+	
 	for($xx=0; $xx<count($table_array); $xx++) # Balance Sheet Qtr 
 	{
 		$product_row_array = parse_array($table_array[$xx], "<tr", "</tr>");
 	  $Qtr = SearchTrOld( $product_row_array ,"Q1" );
+	  echo count($Qtr);
 	  
 	  $end_date = SearchTrOld( $product_row_array ,'/20' );
 	  for( $i=1 ; $i < count( $Qtr ) ; $i++ )
@@ -29,7 +31,7 @@ function BalanceSheet( $SYMBOL ,$link )
 	  			$query = "UPDATE `newest_date` SET `QUARTER` = '$CN' WHERE `SYMBOL` = '$SYMBOL';" ; 
 	  		else
 	  			$query = "INSERT INTO `newest_date` (`SYMBOL`,`ACTIVE`,`QUARTER`) VALUES( '$SYMBOL' , '1' ,'$CN' );";
-	  		//echo $query."</br>";
+	  		echo $query."</br>";
 	  		mysql_query($query);
 	  	}
 		
@@ -58,7 +60,7 @@ function BalanceSheet( $SYMBOL ,$link )
 	  	}
 	  	$query[strlen($query)-1] = " ";//去掉最後一個 ','
 	  	$query.=" WHERE `$CN`.`SYMBOL` = '$SYMBOL' ;";
-	  	//echo $query."</br>";
+	  	echo $query."</br>";
   	  mysql_query($query);    
   	    
 	  }
