@@ -142,7 +142,8 @@ echo "<tr><td><a href = \"http://www.google.com/finance?q=$row[SYMBOL]\" target=
 echo "<tr><td><a href = \"http://investing.businessweek.com/research/stocks/snapshot/snapshot.asp?ticker=$row[SYMBOL]:US&submit=GO\" target=blank>Bloomberg ($row[SYMBOL])</a></td></tr>";
 echo "<tr><td><a href = \"http://ycharts.com/companies/$row[SYMBOL]\" target=blank>YChart ($row[SYMBOL])</a></td></tr>";
 echo "<tr><th bgcolor=#c0c0c0>Charts</th></tr>";
-echo "<tr><td><a href = \"http://investing.money.msn.com/investments/charts/?symbol=$row[SYMBOL]#symbol=$row[SYMBOL]&event=&BB=off&CCI=off&EMA=10&FSO=off&MACD=17,8,9&MFI=off&PSAR=off&RSI=off&SMA=off&SSO=14,5&Volume=off&period=6m&linetype=Line&scale=Auto&comparelist=".'$indu,$compx,$inx'."\" target=blank><strong>MACD+KD+EMA LINES</strong></a></td></tr>";
+echo "<tr><td><a href = \"http://investing.money.msn.com/investments/charts/?symbol=$row[SYMBOL]#symbol=$row[SYMBOL]&event=&BB=off&CCI=off&EMA=10&FSO=off&MACD=17,8,9&MFI=off&PSAR=off&RSI=off&SMA=off&SSO=14,5&Volume=off&period=6m&linetype=Line&scale=Auto&comparelist=".'$indu,$compx,$inx'."\" target=blank><strong>(MSN)MACD+KD+EMA LINES</strong></a></td></tr>";
+echo "<tr><td><a href = \"http://finance.yahoo.com/echarts?s=$row[SYMBOL]+Interactive#symbol=$row[SYMBOL];range=3m;compare=;indicator=sma(10)+stochasticslow(14,5)+macd(17,8,9);charttype=area;crosshair=on;ohlcvalues=1;logscale=off;source=undefined;\" target=blank><strong>(Yahoo)MACD+KD+EMA LINES</strong></a></td></tr>";
 echo "<tr><th bgcolor=#c0c0c0>Major Holders</th></tr>";
 echo "<tr><td><a href = \"http://finance.yahoo.com/q/mh?s=".$row['SYMBOL']."+Major+Holders\" target=blank><strong>Holders</strong></a></td></tr>";
 echo "<tr><th bgcolor=#c0c0c0>Officers And Insider Trading</th></tr>";

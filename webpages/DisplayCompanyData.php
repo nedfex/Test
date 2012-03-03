@@ -19,10 +19,19 @@ function DisplayCompanyData($SYMBOL,$link)
 		
 	$today = getdate();
 	$query = "SELECT * FROM `newest_date` WHERE `SYMBOL` = '$SYMBOL';";
-
-	$result = mysql_fetch_array(mysql_query($query ));
-	$today['year'] = $result['ANNUAL']; 	
-	$today['qtr'] =  $result['QUARTER'];
+	
+	//如果newest_date裡面沒有存在這檔股票資訊 就跳過
+	$result = mysql_query($query );
+	
+	if( mysql_num_rows($result)==0 )
+	{
+		echo "$SYMBOL is not avalible</br>"; 
+		return;
+		}
+	
+	$r = mysql_fetch_array($result);
+	$today['year'] = $r['ANNUAL']; 	
+	$today['qtr'] =  $r['QUARTER'];
 
 	echo "<table border = 2>";
 	echo "<th colspan = 1 bgcolor = #CCCCCC>".$companyName."(".$SYMBOL.")"; 
