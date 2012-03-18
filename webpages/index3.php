@@ -21,7 +21,7 @@ $result= mysql_query($sql,$link);
 for($i=0;$i < mysql_num_rows($result);$i++)
 {
 	$row = mysql_fetch_array($result);
-	echo "<a href = \"http://140.114.213.58/Finance/webpages/showpartcompany.php?SECTOR=$sector&INDUSTRY=$row[INDUSTRY]\">$row[INDUSTRY]</a></br>";
+	echo "<a href = \"http://140.114.213.58/Finance/webpages/showpartcompany.php?SECTOR=".urlencode($sector)."&INDUSTRY=".urlencode($row['INDUSTRY'])."\">$row[INDUSTRY]</a></br>";
 }
 
 ?>
