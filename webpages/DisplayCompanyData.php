@@ -34,7 +34,7 @@ function DisplayCompanyData($SYMBOL,$link)
 	$today['qtr'] =  $r['QUARTER'];
 
 	echo "<table border = 2>";
-	echo "<th colspan = 1 bgcolor = #CCCCCC>".$companyName."(".$SYMBOL.")"; 
+	echo "<th colspan = 1 bgcolor = #CCCCCC>".$companyName."(".$SYMBOL.") ,From MSN Finance"; 
 	echo "<td align = center bgcolor = DDDDDD><b>".$row['SECTOR']." / ".$row['INDUSTRY']."</td></th>";
 	echo "<tr><td><table border = 2>";
 	echo "<th colspan = 5>Growth Data (Untill <b>$today[year] , $today[qtr]</b>)</th>";
