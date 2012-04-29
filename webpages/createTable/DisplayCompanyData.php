@@ -1,14 +1,14 @@
 <?php
-/*include("utility.php");
-include("getCurrentPrice.php");
-include(".../W3C_lib/LIB_http.php");
-include(".../W3C_lib/LIB_parse.php");
-//include("estimatePrice.php");
-include(".../W3C_lib/LIB_searchTr.php");*/
+//include("..\utility.php");
+//
+//include("..\..\W3C_lib\LIB_http.php");
+//include("..\..\W3C_lib\LIB_parse.php");
+//
+//include("..\..\W3C_lib\LIB_searchTr.php");
 
 function DisplayCompanyData($TICKER,$link)
 {
-	include("../config/config.php");
+	//include("..\..\config\config.php");
 	
 	//$link = ConnectDB($SQL);
 	$selectresult=mysql_select_db("finance_ms",$link);
@@ -19,7 +19,7 @@ function DisplayCompanyData($TICKER,$link)
 		
 	$today = getdate();
 	$query = "SELECT * FROM `newest_date` WHERE `TICKER` = '$TICKER';";
-	
+	echo $query;
 	//如果newest_date裡面沒有存在這檔股票資訊 就跳過
 	$result = mysql_query($query );
 	
@@ -55,7 +55,7 @@ function DisplayCompanyData($TICKER,$link)
 	$this_year_net_income = $row['Net Income'];
 	
 	echo "<tr><td bgcolor = #CCCCCC><strong>ROC(ROIC)</td><td>".roundpoint2($row['Return on Invested Capital'])."%</td><td>".roundpoint2($row['Return on Invested Capital 3 year'])."%</td><td>".roundpoint2($row['Return on Invested Capital 5 year'])."%</td><td>".roundpoint2($row['Return on Invested Capital 9 year'])."%</td></tr>";
-	echo "<tr><td bgcolor = #CCCCCC><strong>ROE</td><td>".roundpoint2($row['Return on Invested Capital'])."%</td><td>".roundpoint2($row['Return on Equity 3 year'])."%</td><td>".roundpoint2($row['Return on Equity 5 year'])."%</td><td>".roundpoint2($row['Return on Equity 9 year'])."%</td></tr>";
+	echo "<tr><td bgcolor = #CCCCCC><strong>ROE</td><td>".roundpoint2($row['Return on Equity'])."%</td><td>".roundpoint2($row['Return on Equity 3 year'])."%</td><td>".roundpoint2($row['Return on Equity 5 year'])."%</td><td>".roundpoint2($row['Return on Equity 9 year'])."%</td></tr>";
 	
 	//get newest debt
 	//$query = "SELECT * FROM `$today[qtr]` WHERE `TICKER` = '$TICKER';";
@@ -151,10 +151,10 @@ function DisplayCompanyData($TICKER,$link)
 	
 	echo "<td><table border = 2>";
 	
-	/*$CurrentData = getCurrentPE($row['TICKER']);
-	//$CurrentData['PRICE']=getCurrentPrice($row['TICKER'],true);
-	$CurrentData['PRICE']=getCurrentPrice($row['TICKER'],false);//$CurrentData['PRICE']=getCurrentPrice($row['TICKER'],true););
-	$ans = estimatePrice($row['TICKER'],$CurrentData );
+	$CurrentData = getCurrentPE($row['TICKER'],$row['SYMBOL']);
+	$CurrentData['PRICE']=getCurrentPrice($row['TICKER'],$row['SYMBOL'],false);
+	//$CurrentData['PRICE']=getCurrentPrice($row['TICKER'],false);//$CurrentData['PRICE']=getCurrentPrice($row['TICKER'],true););
+	$ans = estimatePrice($row['TICKER'],$row['SYMBOL'],$CurrentData );
 
 	$payback_years = paybacktime( $row['MARKET_CAP'],$this_year_net_income,$ans['final_growth']);
 
@@ -171,7 +171,7 @@ function DisplayCompanyData($TICKER,$link)
 	if($ans['safety price'] > $CurrentData['PRICE'])	
 		echo "<th colspan =6 bgcolor = 00ff00><font color = #ff0000>BUY</font></th>";
 	else
-		echo "<th colspan =6 bgcolor = 00AAAAAA><font color = #0000ff>WAIT</font></th>";*/
+		echo "<th colspan =6 bgcolor = 00AAAAAA><font color = #0000ff>WAIT</font></th>";
 	
 	echo "</table></td></tr></table></br>";
 	//mysql_close($link);

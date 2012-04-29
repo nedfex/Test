@@ -55,6 +55,8 @@ include("..\..\W3C_lib\LIB_SearchTr.php");
 include("..\config\config.php");
 
 include("DisplayCompanyData.php");
+include("estimatePrice.php");
+include("getCurrentPrice.php");
 include("..\utility.php");
 
 set_time_limit(3600);

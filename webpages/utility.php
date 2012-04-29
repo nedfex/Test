@@ -75,6 +75,20 @@ function growth_rate($start,$end,$years)
 		}
 	}
 }
+function rule72($start,$end,$years)
+{
+	if( $start == Null || $end == Null || $end == 0)
+		return Null;
+	else
+	{
+		if( $end >= $start)
+			return pow( $end/$start , 1/$years )-1;
+		else
+		{
+			return -(1-pow( $end/$start , 1/$years ));
+		}
+	}
+}
 function check_element($element)
 {
 	if( is_null($element) )

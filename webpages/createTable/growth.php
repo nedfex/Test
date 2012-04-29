@@ -111,7 +111,7 @@ function growth($TICKER	,$link)
 		$row = mysql_fetch_array($result); 
 		$growth_data["Operating Cash Flow ".$YD[$i]." year"] = growth_rate($row['Operating cash flow'] , $this_year_data['Operating cash flow'] , $YD[$i] );
 		$growth_data["Free Cash Flow ".$YD[$i]." year"] = growth_rate($row['Free Cash Flow'] , $this_year_data['Free Cash Flow'] , $YD[$i] );	
-		echo $T.$row['Free Cash Flow']."\n";
+		//echo $T.$row['Free Cash Flow']."\n";
 	}
 	
 	if( isset($growth_data) == Null )

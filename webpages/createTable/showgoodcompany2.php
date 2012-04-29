@@ -7,13 +7,15 @@
 // �s�WMarket Cap Shares Outstanding
 // http://investing.money.msn.com/investments/stock-price?Symbol=ORCL
 
-include("../config/config.php");
-/*include("..\W3C_lib\LIB_http.php");
-include("..\W3C_lib\LIB_parse.php");
-include("..\W3C_lib\LIB_SearchTr.php");*/
-include("../utility.php");
+include("..\..\W3C_lib\LIB_http.php");
+include("..\..\W3C_lib\LIB_parse.php");
+include("..\..\W3C_lib\LIB_SearchTr.php");
+include("..\config\config.php");
 
 include("DisplayCompanyData.php");
+include("estimatePrice.php");
+include("getCurrentPrice.php");
+include("..\utility.php");
 
 set_time_limit(3600);
 $link = ConnectDB($SQL);
@@ -44,7 +46,7 @@ for($h=0; $h < mysql_num_rows($R);$h++)
 		}
 	}
 	
-	if( $flag==True && $NullCount < 10 && $GoodCount > 15)
+	if( $flag==True && $NullCount < 10 && $GoodCount > 20)
 	{
 		//$query = "UPDAT `growth` SET `29` = 1 WHERE `SYMBOL` = '$row[SYMBOL]';";
 		//mysql_query($query);
