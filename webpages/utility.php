@@ -1,6 +1,7 @@
 <?php
 function ConnectDB($SQL)
 {
+	global $SQL;
 	$link = mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);
 	$selectresult = mysql_select_db($SQL['database'],$link);
 

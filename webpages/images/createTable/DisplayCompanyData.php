@@ -19,17 +19,10 @@ function DisplayCompanyData($TICKER,$link)
 		
 	$today = getdate();
 	$query = "SELECT * FROM `newest_date` WHERE `TICKER` = '$TICKER';";
-<<<<<<< HEAD
-	echo $query;
+	
 	//如果newest_date裡面沒有存在這檔股票資訊 就跳過
 	$result = mysql_query($query );
 	
-=======
-
-	//如果newest_date裡面沒有存在這檔股票資訊 就跳過
-	$result = mysql_query($query );
-
->>>>>>> 3618a31b66f6fd2d2d47a465b4d4804be1c911d0
 	if( mysql_num_rows($result)==0 )
 	{
 		echo "$TICKER is not avalible</br>"; 
@@ -49,11 +42,7 @@ function DisplayCompanyData($TICKER,$link)
 	$today['qtr'] =  $r['QUARTER'];
 
 	echo "<table border = 2>";
-<<<<<<< HEAD
 	echo "<th colspan = 1 bgcolor = #CCCCCC>".$companyName."(".$TICKER.")"; 
-=======
-	echo "<th colspan = 1 bgcolor = #CCCCCC>".$companyName."(".$TICKER.") ,From MoringStar"; 
->>>>>>> 3618a31b66f6fd2d2d47a465b4d4804be1c911d0
 	echo "<td align = center bgcolor = DDDDDD><b>".strtolower($row['SECTOR'])." / ".strtolower($row['INDUSTRY'])."</td></th>";
 	echo "<tr><td><table border = 2>";
 	echo "<th colspan = 5>Growth Data (Untill <b>$today[year] , $today[qtr]</b>)</th>";
@@ -66,11 +55,7 @@ function DisplayCompanyData($TICKER,$link)
 	$this_year_net_income = $row['Net Income'];
 	
 	echo "<tr><td bgcolor = #CCCCCC><strong>ROC(ROIC)</td><td>".roundpoint2($row['Return on Invested Capital'])."%</td><td>".roundpoint2($row['Return on Invested Capital 3 year'])."%</td><td>".roundpoint2($row['Return on Invested Capital 5 year'])."%</td><td>".roundpoint2($row['Return on Invested Capital 9 year'])."%</td></tr>";
-<<<<<<< HEAD
-	echo "<tr><td bgcolor = #CCCCCC><strong>ROE</td><td>".roundpoint2($row['Return on Equity'])."%</td><td>".roundpoint2($row['Return on Equity 3 year'])."%</td><td>".roundpoint2($row['Return on Equity 5 year'])."%</td><td>".roundpoint2($row['Return on Equity 9 year'])."%</td></tr>";
-=======
 	echo "<tr><td bgcolor = #CCCCCC><strong>ROE</td><td>".roundpoint2($row['Return on Invested Capital'])."%</td><td>".roundpoint2($row['Return on Equity 3 year'])."%</td><td>".roundpoint2($row['Return on Equity 5 year'])."%</td><td>".roundpoint2($row['Return on Equity 9 year'])."%</td></tr>";
->>>>>>> 3618a31b66f6fd2d2d47a465b4d4804be1c911d0
 	
 	//get newest debt
 	//$query = "SELECT * FROM `$today[qtr]` WHERE `TICKER` = '$TICKER';";
