@@ -1,0 +1,256 @@
+HTML
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-TOP: 0px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+BODY
+{
+    PADDING-RIGHT: 4%;
+    PADDING-LEFT: 4%;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 16px;
+    PADDING-BOTTOM: 20px;
+    COLOR: #070707;
+    BACKGROUND-COLOR: #fffffa;
+    LINE-HEIGHT: normal;
+    PADDING-TOP: 20px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+}
+TD
+{
+    FONT: 18px 'line-height: 140%',   Verdana, Geneva, Arial, sans-serif;
+    VERTICAL-ALIGN: top;
+    FONT-VARIANT: small-caps;
+}
+TH
+{
+    VERTICAL-ALIGN: top;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+
+A:link
+{
+    COLOR: #0000ff;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+A:visited
+{
+    COLOR: #6699cc;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+A
+{
+    COLOR: #333366;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+A:hover
+{
+    COLOR: #224499;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;    
+}
+A.menu
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 120%;
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;;
+    FONT-VARIANT: normal
+}
+A.menu:visited
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 120%;
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;;
+    FONT-VARIANT: normal
+}
+par
+{
+    FONT-WEIGHT: normal;
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+H2
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: 650%;
+    PADDING-BOTTOM: 8px;
+    MARGIN: 0px 0px 0px -20px;
+    LINE-HEIGHT: 100%;
+    PADDING-TOP: 10px;
+    COLOR: #663300;
+    FONT-SIZE: 200%;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+H3
+{
+    MARGIN-TOP: 30px;
+    FONT-WEIGHT: 600%;
+    FONT-SIZE: 140%;
+    LINE-HEIGHT: 90%;
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+H4
+{
+    FONT-WEIGHT: 500%;
+    FONT-SIZE: 120%;
+    MARGIN: 20px 0px 10px;
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+H5
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 110%;
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+
+
+blue
+{
+    FONT-WEIGHT: normal;
+    COLOR: #663300;
+    BORDER-BOTTOM: #663300 1px solid;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;;
+    FONT-VARIANT: normal
+}
+P
+{
+    LINE-HEIGHT: 120%;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+BLOCKQUOTE
+{
+    PADDING-LEFT: 10px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+UL
+{
+    PADDING-RIGHT: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-BOTTOM: 1px;
+    MARGIN: 0px;
+    PADDING-TOP: 1px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+OL
+{
+    PADDING-RIGHT: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-BOTTOM: 1px;
+    MARGIN: 0px;
+    PADDING-TOP: 1px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+LI
+{
+    PADDING-RIGHT: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-BOTTOM: 1px;
+    MARGIN: 0px;
+    PADDING-TOP: 1px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+UL
+{
+    MARGIN-LEFT: 25px;
+}
+OL
+{
+    MARGIN-LEFT: 25px;
+}
+.spacing LI
+{
+    MARGIN-BOTTOM: 15px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+.spacing LI LI
+{
+    MARGIN-BOTTOM: 5px;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+.spacing LI:unknown
+{
+    MARGIN-BOTTOM: 5px;
+}
+HR
+{
+    COLOR: #663300;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    BACKGROUND-COLOR: #000000;
+    MARGIN-TOP: 0px;
+    HEIGHT: 1px;
+}
+.overline TD
+{
+    BORDER-TOP: #c0c0c0 2px solid;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+.underline TD
+{
+    BORDER-BOTTOM: #c0c0c0 2px solid;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+}
+DL
+{
+    BORDER-RIGHT: 0px;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    PADDING-LEFT: 1px;
+    PADDING-BOTTOM: 14px;
+    MARGIN: 0px;
+    BORDER-LEFT: 0px;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: 0px;
+    LIST-STYLE-TYPE: none;
+    COLOR: #070707;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+DT
+{
+    BORDER-RIGHT: 0px;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    PADDING-LEFT: 8px;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 0px;
+    BORDER-LEFT: 0px;
+    PADDING-TOP: 12px;
+    BORDER-BOTTOM: 0px;
+    LIST-STYLE-TYPE: none;
+    COLOR: #070707;
+    FONT-SIZE: 120%;    
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: small-caps;
+}
+DD
+{
+    BORDER-RIGHT: 0px;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    PADDING-LEFT: 28px;
+    PADDING-BOTTOM: 5px;
+    MARGIN: 0px;
+    BORDER-LEFT: 0px;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: 0px;
+    LIST-STYLE-TYPE: none;
+    COLOR: #070707;
+    FONT-FAMILY:   Verdana, Geneva, Arial, sans-serif;
+    FONT-VARIANT: normal;    
+}

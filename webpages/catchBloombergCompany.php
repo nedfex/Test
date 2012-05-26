@@ -52,10 +52,12 @@ for( $i=0;$i <= 10/*mysql_num_rows($result)*/ ;$i++)
 		Cash_Flow($row['SYMBOL'],$link);
 		PE_BOOK_VALUE($row['SYMBOL'],$link);
 		EPS_Sales_Income($row['SYMBOL'],$link);
+		//return;
 		calculate($row['SYMBOL'],$link);
 		ROE($row['SYMBOL'],$link); //處裡自行計算之ROE 以及從MSN抓之一年期及五年期平均ROE
 		growth($row['SYMBOL'],$link);
-		setCompanyActive($row['SYMBOL']);
+		//setCompanyActive($row['SYMBOL']);
+		
 		echo "$row[SECTOR]: $row[INDUSTRY] : $row[SYMBOL] 'Completed...\n</br>";
 		//$link=mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);		$selectresult=mysql_select_db($SQL['database'],$link);		
 		//$query = "INSERT `onmarket` (`SYMBOL`,`Flag`) VALUES( '$row[SYMBOL]' , 1);"; 

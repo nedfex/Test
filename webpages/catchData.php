@@ -194,7 +194,6 @@ function getCompetitor($SYMBOL,$link) //by CHART
 		}
 		echo "</table>";
 	}
-
 }
 function getCompanyProfile($SYMBOL,$link)
 {
@@ -224,4 +223,5 @@ function getCompanyProfile($SYMBOL,$link)
 		echo "<table width= 650 border = 2><th>Company Introduction...</th>";
 		echo "<tr><td>".$table_array."</td></tr></table>";
 }
+echo "<a href = \"createTable/catchData.php?SYMBOL_NAME=$row[SYMBOL]\">MoringStar DATA PAGE</a>";
 ?>

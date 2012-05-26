@@ -14,3 +14,4 @@ function checkCompany($symbol)
 		return true;
 }
 ?>
+<span> DATE </span>

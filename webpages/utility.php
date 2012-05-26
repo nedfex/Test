@@ -1,6 +1,7 @@
 <?php
 function ConnectDB($SQL)
 {
+	global $SQL;
 	$link = mysql_connect($SQL['address'],$SQL['user'],$SQL['password']);
 	$selectresult = mysql_select_db($SQL['database'],$link);
 
@@ -62,6 +63,20 @@ function table_exist($table)
 }
 
 function growth_rate($start,$end,$years)
+{
+	if( $start == Null || $end == Null || $end == 0)
+		return Null;
+	else
+	{
+		if( $end >= $start)
+			return pow( $end/$start , 1/$years )-1;
+		else
+		{
+			return -(1-pow( $end/$start , 1/$years ));
+		}
+	}
+}
+function rule72($start,$end,$years)
 {
 	if( $start == Null || $end == Null || $end == 0)
 		return Null;
