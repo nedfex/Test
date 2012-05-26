@@ -1,4 +1,5 @@
 <?php
+include("./config/config.php");
 include("DisplayCompanyData.php");
 include("utility.php");
 include("getCurrentPrice.php");
@@ -21,6 +22,9 @@ if ($service == 'a'){
 }else if($service == 'd'){
 	$symbol = $_GET['symbol'];
 	get_company_summary($symbol);
+}else if($service == 'e'){
+	$selected_text = $_GET['selected_text'];
+	get_suggested_company($selected_text);
 }else{
 	return '{}';
 }
@@ -29,6 +33,7 @@ if ($service == 'a'){
 Connect to the Awesome Stock database
 */
 function connect_db(){
+	global $SQL;
 	$link = ConnectDB($SQL);
 	if (!$link) {
 		die('Could not connect: ' . mysql_error());
@@ -87,6 +92,18 @@ Get the summary of a particular company and return it as JSON format
 */
 function get_company_summary($symbol){
 	DisplayCompanyData($symbol);
+}
+
+function get_suggested_company($partial_company_name){
+	connect_db();
+	$sql = "SELECT * FROM `company` WHERE `CompanyName` LIKE '%".$partial_company_name."%' LIMIT 0, 30 ";
+	$result = mysql_query($sql);
+	$result_array = array();
+	while ($row = mysql_fetch_array($result)) {
+		$result_array[] = $_SERVER['SERVER_NAME'].'/Finance/webpages/catchData.php?SYMBOL_NAME='.$row['SYMBOL']; 
+	}
+	$result_json = json_encode($result_array);
+	echo $result_json;
 }
 
 ?>
